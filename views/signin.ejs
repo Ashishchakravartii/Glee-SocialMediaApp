@@ -1,0 +1,13 @@
+<%- include("./partials/header") %>
+<%- include("./partials/nav") %>
+
+<h1></h1>
+<p>Welcome to Signin page</p>
+<form class="p-5" action="/signin" method="post">
+    <input class="m-3 w-25 form-control" type="text" placeholder="username" name="username">
+    <input class="m-3 w-25 form-control" type="password" placeholder="password" name="password">
+    <button class="m-3 btn btn-sm bg-dark-subtle">Sign-in</button>
+</form>
+ <h5><a href="/getEmail">Forget Password?</a></h5>
+
+<%- include("./partials/footer") %>

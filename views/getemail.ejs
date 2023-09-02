@@ -1,0 +1,15 @@
+<%- include("./partials/header") %>
+
+<h1 class="ms-5 mt-5">Enter Existing Email</h1>
+<form class="p-5" action="/getEmail" method="post">
+  <input
+    class="m-3 w-25 form-control"
+    type="email"
+    placeholder="John@123gmail.com"
+    name="email"
+  />
+ 
+  <button class="m-3 btn btn-sm bg-dark-subtle"> Search Account</button>
+</form>
+
+<%- include("./partials/footer") %>

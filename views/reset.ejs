@@ -1,0 +1,23 @@
+<%- include("./partials/header") %>
+
+<h1></h1>
+<p>Reset Password</p>
+<form class="p-5" action="/reset/<%= user._id %>" method="post">
+  <input
+    class="m-3 w-25 form-control"
+    type="password"
+    placeholder="Old Password"
+    name="oldpassword"
+  />
+
+  <input
+    class="m-3 w-25 form-control"
+    type="password"
+    placeholder="New Password"
+    name="newpassword"
+  />
+  <button class="m-3 btn btn-sm bg-dark-subtle">Reset</button>
+</form>
+<h1><%= user._id %></h1>
+
+<%- include("./partials/footer") %>

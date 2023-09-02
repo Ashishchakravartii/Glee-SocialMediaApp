@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body{
+    width: 100%;
+    height: 100%;
+}
+.ExplorePage{
+    width: 100vw;
+    height: 100%;
+    background-image: url("/images/elephant final.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ExplorePageBox{
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+        background-image: url("/images/elephant final.jpg");
+
+}
+.ExplorePageBox-top{
+    width: 100%;
+    height: 10%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.ExplorePageBox-bottom{
+    width: 100%;
+    height: 90%; 
+}
+.ExplorePageBox-top>ul{
+    gap: 2vmax;
+    display: flex;
+    margin-top: 2vmax;
+    margin-left: 8vmax;
+    color: white;
+    list-style: none;
+}
+.ExplorePageBox-top>ul>li{
+   /* font-family: 'Phudu', cursive; */
+font-family: 'Encode Sans SC', sans-serif;
+font-weight: 500;
+
+
+   font-size: 0.8vmax;
+   letter-spacing: 0.1vmax;
+}
+.ExplorePageBox-LeftContent{
+    width: 60%;
+    height: 100%;
+font-family: 'Encode Sans SC', sans-serif;
+color: white;
+padding-left: 6vmax;
+padding-top: 2vmax;
+}
+.ExplorePageBox-LeftContent h1,.ExplorePageBox-LeftContent h2{
+    font-weight: 900;
+
+}
+.ExplorePageBox-LeftContent h1{
+    font-size: 10vmax;
+    opacity: 0.3;
+}
+.ExplorePageBox-LeftContent h2{
+    font-size: 3vmax;
+    font-weight: 500;
+    margin-top: 2vmax;
+}
+.explore{
+    width: 15vmax;
+    height:3vmax;
+    color: white;
+    background-color: transparent;
+    border: 2px solid rgba(229, 227, 227, 0.342);
+    margin-top: 3vmax;
+    border-radius: 50px;
+    font-weight: 300;
+font-family: 'Encode Sans SC', sans-serif;
+
+}
+
+
+
