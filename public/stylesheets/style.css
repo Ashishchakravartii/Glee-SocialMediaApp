@@ -240,7 +240,7 @@ nav span{
     
 }
 .serchBarDiv h6{
-   color: #a4a3a2;
+   color: #b7b4b1;
    font-weight: 400;
    margin-left: 0.5vmax;
    margin-top: 0.3vmax;
@@ -256,6 +256,116 @@ nav span{
 .joinBoxContent{
     width: 100vw;
     height: 88vh;
-    background-color: red;
+    display: flex;
+}
+.sideOptions{
+    width: 18vw;
+    height: 100%;
+
+}
+.sideOptions >div{
+    width: 100%;
+    height: 33.33%;
+}
+.sideOptions >div>a>img{
+    width: 1.8vmax;
+}
+.sideOptions >div>a>i{
+    font-size: 1.5vmax;
+    font-weight: 100;
+}
+.sideOptions >div>a{
+    text-decoration: none;
+    color: black;
+    font-size: 1vmax;
+}
+.HastagBox{
+     width: 25vw;
+    height: 100%;
+}
+.sideOptions-Div3{
+    font-size: 0.79vmax;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sideOptions-Div3>div>p>img{
+    width: 1vmax;
+}
+.sideOptions-Div3>div>i{
+    font-size: 1.3vmax;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    color: black;
+    padding: 0.5vmax;
+}
+.sideOptions-Div3>h6{
+    width: 5vmax;
+    font-size: 0.8vmax;
+    font-weight: 500;
+    border-radius: 50px;
+    text-align: center;
+    padding: 0.5vmax 1vmax;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+
+}
+.sideCardFooter{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    
+}
+.HastagBox>div{
+    width: 90%;
+    height: 5vmax;
+    margin-top: 1.2vmax;
+    border-radius: 35px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.8vmax;
+}
+.HastagBox > div:hover {
+    transition: all 2s ease;
+    background-color: #4EDCD8;
+}
+.HastagBox>div>img{
+    width: 1vmax;
+}
+.HastagBox>div>h5{
+    font-size: 1vmax;
+    font-weight:500;
+}
+.HastagBox>div>h5>span{
+    font-size: 0.85vmax;
+    color: rgb(160, 156, 156);
+    font-weight: 400;
 }
 
+.BrandContent{
+     width: 52vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.BrandContent >img{
+    /* width: 90%; */
+    width:30vmax;
+    /* margin-left: 12vmax; */
+    margin-top: -5vmax;
+}
+.joinBtn{
+    width: 15vmax;
+    color: white;
+    height: 3vmax;
+   border: none;
+   background-color: #4EDCD8;
+   border-radius: 50px;
+}
