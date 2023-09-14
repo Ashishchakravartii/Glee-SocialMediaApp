@@ -209,4 +209,53 @@ font-family: 'Encode Sans SC', sans-serif;
     letter-spacing: 0.1vmax;
 }
 
+nav{
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav i{
+    font-size: 2vmax;
+}
+.serchBarDiv{
+    width: 80%;
+    height: 40%;
+    border-radius: 50px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding-left: 1vmax;
+
+}
+nav span{
+    width: 5vmax;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.serchBarDiv img{
+    width: 1.1vmax;
+    
+}
+.serchBarDiv h6{
+   color: #a4a3a2;
+   font-weight: 400;
+   margin-left: 0.5vmax;
+   margin-top: 0.3vmax;
+    
+}
+.SignInbtn-joinPage{
+    width: 8vmax;
+    height: 2.5vmax;
+    background-color: #4EDCD8;
+    border: none;
+    border-radius: 50px;
+}
+.joinBoxContent{
+    width: 100vw;
+    height: 88vh;
+    background-color: red;
+}
 

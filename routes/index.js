@@ -8,14 +8,17 @@ passport.use(new LocalStrategy(UserModel.authenticate()));
 const {sendmail}= require("../utils/mail")
 
 /* GET home page. */
-router.get('/',isLoggedIn, function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/',isLoggedIn, function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 // --------- Starting Page ------------------
 
-router.get("/exploreNow", function (req, res, next) {
-  res.render("exploreNow");
+// router.get("/exploreNow", function (req, res, next) {
+//   res.render("exploreNow");
+// });
+router.get("/", function (req, res, next) {
+  res.render("join");
 });
 
 // -----------signup---------------
