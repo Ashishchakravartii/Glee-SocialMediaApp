@@ -1,15 +1,40 @@
 <%- include("./partials/header") %>
 
-<h1 class="ms-5 mt-5">Enter Existing Email</h1>
-<form class="p-5" action="/getEmail" method="post">
-  <input
-    class="m-3 w-25 form-control"
-    type="email"
-    placeholder="John@123gmail.com"
-    name="email"
-  />
- 
-  <button class="m-3 btn btn-sm bg-dark-subtle"> Search Account</button>
-</form>
+<div class="forgetPageContainer">
+<div class="forget-top">
+<h2 class="logo"><img width="32" height="32" src="/images/icons8-cat-footprint-64 (1).png" alt="cat-footprint"/>Glee</h2></div>
+ <div class="forgetCard">
+  <img width="80" height="80" src="https://img.icons8.com/ios/500/password--v1.png" alt="password--v1"/>
+  
+  <h5>Trouble with logging in?</h5>
+  <p class="text-secondary">Enter your email address and we'll send you a link to get back into your account.</p>
+  <form class="" action="/getEmail" method="post">
+    <input
+      class="form-control"
+      type="email"
+      placeholder="John@123gmail.com"
+      name="email"
+    />
+   
+    <button class=""> Search Account</button>
+  </form>
+ <h6>OR</h6>
+  <a class="text-decoration-none text-dark" href="/signup"><strong>Create New Account</strong></a> <br>
+  <a class="text-decoration-none  backToLoginBtn " href="/signin">Back to Login</a>
+ </div>
+ <ul>
+    <li>About</li>
+    <li>Blog</li>
+    <li>Jobs</li>
+    <li>Help</li>
+    <li>API</li>
+    <li>Privacy</li>
+    <li>Terms</li>
+    <li>Locations</li>
+    <li>Contact</li>
+    <li>FAQ</li>
+  </ul>
+  <p>© 2023 Peeps Enterprises, Inc.</p>
+</div>
 
 <%- include("./partials/footer") %>

@@ -8,6 +8,7 @@ body{
     width: 100%;
     height: 100%;
 }
+
 .ExplorePage{
     width: 100vw;
     height: 100%;
@@ -415,7 +416,9 @@ nav span{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:  0 2vmax;
+    padding:  0 2.5vmax;
+font-family: 'Macondo', cursive;
+    
 }
 .signInBoxContentDiv{
     width: 100%;
@@ -435,7 +438,8 @@ nav span{
     height: 3vmax;
 }
 .signInBoxContentDiv> img{
-    width: 15vmax;
+    width:15vmax;
+    
 }
 .SignInContainer form{
     width: 100%;
@@ -445,6 +449,7 @@ nav span{
     justify-content: center;
     justify-content: space-around;   
      align-items: center;
+     margin-top: 1vmax;
 
 
 }
@@ -467,4 +472,86 @@ nav span{
 }
 .SignInContainer>form>h6>span,.SignInContainer>form>h6>a{
     color: #4EDCD8;
+}
+.logo{
+    font-family: 'Macondo', cursive;
+}
+
+/* ====================================  Forget  ================================== */
+
+.forgetPageContainer{
+    width: 100vw;
+    height: 100vh;
+}
+.forget-top{
+    width: 100vw;
+    height: 9vh;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding-left: 25vmax;
+}
+.forgetCard{
+    width: 25vw;
+    height: 70vh;
+    margin: auto;
+    margin-top: 3vmax;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding: 2vmax 1.5vmax 0 1.5vmax;
+
+}
+.forgetCard>form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.forgetCard>form>input{
+    width: 70%;
+    height: 2vmax;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.forgetCard>form>button{
+    width: 70%;
+    height: 2vmax;
+    background-color: #4EDCD8;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 1vmax;
+    color: white;
+    font-weight: 400;
+}
+.backToLoginBtn{
+    border-top: 1px solid rgb(209, 203, 203);
+    width: 100%;
+    height: 2.2vmax;
+    padding-top: 0.7vmax;
+    color: gray;
+}
+.forgetCard>span>img{
+    color: #b7b4b1;
+}
+.forgetPageContainer>ul{
+    width: 100vw;
+    height: 6vh;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 2vmax;
+    font-size: 0.8vmax;
+}
+.forgetPageContainer >p{
+    font-size: 0.8vmax;
+    color: #a1a1a0;
+   margin-left: 45vmax;
 }
