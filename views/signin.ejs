@@ -1,13 +1,30 @@
 <%- include("./partials/header") %>
-<%- include("./partials/nav") %>
 
-<h1></h1>
-<p>Welcome to Signin page</p>
-<form class="p-5" action="/signin" method="post">
-    <input class="m-3 w-25 form-control" type="text" placeholder="username" name="username">
-    <input class="m-3 w-25 form-control" type="password" placeholder="password" name="password">
-    <button class="m-3 btn btn-sm bg-dark-subtle">Sign-in</button>
-</form>
- <h5><a href="/getEmail">Forget Password?</a></h5>
+<div class="SignInContainer">
+  <div class="signInBoxTop">
+    <h4>Glee</h4>
+    <i class="ri-close-line"></i>
+  </div>
+  <div class="signInBoxContentDiv">
+    <h3>MEET NEW IDEAS</h3>
+    <span>
+      <img src="/images/bracket-left.png" alt="" />
+      <h5>
+        10,000,000+ <br />
+        DOWNLOADS
+      </h5>
+      <img src="/images/bracket-right.png" alt="" />
+    </span>
+    <img src="/images/catGif.gif" alt="">
+    <!-- <img src="/images/giphy (2).gif" alt=""> -->
+  </div>
+
+  <form class="" action="/signin" method="post">
+    <input class="" type="text" placeholder="username" name="username" />
+    <input class="" type="password" placeholder="password" name="password" />
+    <button class="">Sign-in</button>
+    <h6>By signing in, you agree to our <span>Terms</span> and <span>Privacy Policy</span>  | <a class="text-decoration-none" href="/getEmail">Forget Password?</a></h6>
+  </form>
+</div>
 
 <%- include("./partials/footer") %>
