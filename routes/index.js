@@ -46,12 +46,17 @@ router.get("/signin",(req,res,next)=>{
 router.post(
   "/signin",
  passport.authenticate("local",{
-  successRedirect:"/",
+  successRedirect:"/home",
   failureRedirect:"/signin"
  }),
   (req, res, next) => {}
 );
 
+// -------------Home page =================
+
+router.get("/home",(req,res)=>{
+  res.render("homepage")
+})
 // ----------- SignOut--------------------
 
 router.get("/signout",(req,res,next)=>{

@@ -1,0 +1,58 @@
+<%- include("./partials/header") %>
+<nav class="nav">
+  <span class=""
+    ><i class="ri-menu-4-fill"></i><img class="ms-2" width="32" height="32" src="/images/icons8-cat-footprint-64 (1).png" alt="cat-footprint"/>
+    <h3 class="me-3 logo">Glee</h3></span
+  >
+
+  <div class="serchBarDiv ms-4">
+    <img src="/images/search.svg" alt="picture" />
+    <h6 class="">Search</h6>
+  </div>
+  <button class="SignInbtn-joinPage"><a class="text-decoration-none text-dark" href="/signin">SIGN IN</a></button>
+</nav>
+<div class="joinBoxContent">
+  <div class="sideOptions">
+    <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
+      <a href=""><img src="/images/homeIcon.svg" alt="">&nbsp; Home</a>
+      <a href=""><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
+      <a href=""><i class="ri-settings-line"></i> &nbsp; Setting</a>
+     
+    </div>
+  
+    <div> <ul class="list-unstyled fs-5">
+      
+      <li class="createPost" href=""><i class="ri-add-line"></i> Create Post</>
+    </ul></div>
+      <div class="sideOptions-Div3">
+      <div class=""><i class="ms-4 mt-1 ri-google-play-line"></i><i class="ms-4 mt-1 ri-apple-fill"></i></div>
+      <h6 class="ms-4 mt-2">English</h6>
+      <div class="sideCardFooter ps-4">
+        <ul class="d-flex gap-3 list-unstyled ">
+          <li>Terms</li>
+          <li>Privacy</li>
+          <li>FAQ</li>
+        </ul>
+        <p class="">Made with <img src="/images/like_blue.svg" alt=""> by <br> <strong>ASHISH CHAKRAVARTI</strong></p>
+        <p class="">&copy 2023 Peeps Enterprises, Inc.</p>
+      <div class=""></div>
+
+      </div>
+    </div>
+  </div>
+  <div class="feedContainer">
+    <div class="uploadDiv">
+      <span><p>Create new post </p><i class="closeUpload fs-5 mb-2 ri-close-line"></i></span>
+        <form enctype="multipart/form-data">
+          <i class="fs-1 ri-upload-fill"></i>
+          <p>Upload photos here</p>
+          <input class="form-control bg-info-subtle" type="file" >
+          <button class="btn bg-light w-50 mt-2">Upload</button>
+        </form>
+
+
+    </div>
+
+  </div>
+</div>
+<%- include("./partials/footer") %>
