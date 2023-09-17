@@ -54,8 +54,8 @@ router.post(
 
 // -------------Home page =================
 
-router.get("/home",(req,res)=>{
-  res.render("homepage")
+router.get("/home",isLoggedIn,(req,res)=>{
+  res.render("homepage",{user:req.user})
 })
 // ----------- SignOut--------------------
 

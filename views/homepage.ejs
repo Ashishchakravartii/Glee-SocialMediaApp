@@ -9,7 +9,12 @@
     <img src="/images/search.svg" alt="picture" />
     <h6 class="">Search</h6>
   </div>
-  <button class="SignInbtn-joinPage"><a class="text-decoration-none text-dark" href="/signin">SIGN IN</a></button>
+   <% if(user){ %>
+    <button class="SignInbtn-joinPage"><a class="text-decoration-none text-dark" href="/profile">PROFILE</a></button>
+    <% }else{ %>
+      <button class="SignInbtn-joinPage"><a class="text-decoration-none text-dark" href="/signin">SIGN IN</a></button>
+      <% } %>
+  
 </nav>
 <div class="joinBoxContent">
   <div class="sideOptions">
@@ -22,11 +27,12 @@
   
     <div> <ul class="list-unstyled fs-5">
       
-      <li class="createPost" href=""><i class="ri-add-line"></i> Create Post</>
+      <li class="createPost" href=""><i class="ri-add-line"></i> Create Post</li>
     </ul></div>
       <div class="sideOptions-Div3">
       <div class=""><i class="ms-4 mt-1 ri-google-play-line"></i><i class="ms-4 mt-1 ri-apple-fill"></i></div>
-      <h6 class="ms-4 mt-2">English</h6>
+      <h6 class="ms-4 mt-2"><a class="text-decoration-none text-dark" href="/signout">LOG OUT</a></h6>
+
       <div class="sideCardFooter ps-4">
         <ul class="d-flex gap-3 list-unstyled ">
           <li>Terms</li>
