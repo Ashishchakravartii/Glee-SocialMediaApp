@@ -607,13 +607,13 @@ font-family: 'Macondo', cursive;
 }
 .createPost>i{
    
-    font-size: 1.7vmax;
+    font-size: 1.3vmax;
     font-weight: 100;
 
 }
 .createPost{
     font-size: 1vmax;
-    margin-left: 1.1vmax;
+    margin-left: 1.6vmax;
 }
 
 /* ------------------------ feed ----------------------- */
@@ -623,11 +623,14 @@ font-family: 'Macondo', cursive;
     display: flex;
 }
 .feedSideBar{
-     width: 18vmax;
+     width: 17vmax;
     height: 40.5vmax; 
     position: fixed; 
     left: 0;
     top: 12%;
+    /* border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 30px 30px 24px rgba(0,0,0, 0.025); */
+    
 }
 nav{
     position: fixed;
@@ -681,8 +684,8 @@ nav{
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
 }
 .postBox{
-    width: 50%;
-    height: 40vmax;
+    width: 55%;
+    height: 37vmax;
     margin-top: 1.5vmax;
     border-radius: 40px;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
@@ -760,3 +763,90 @@ nav{
     height: 2vmax;
     margin-left: 0.5vmax;
 }
+
+/* ----------------------- user info card ------------------------------------ */
+
+.userInfoDiv{
+    width: 25%;
+    height: 30%;
+    margin-top: 6.5vmax;
+    margin-left: 2vmax;
+    border-radius: 50px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    display: flex;
+    overflow: hidden;
+
+}
+.userInfoDiv-left{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 1.5vmax;
+    margin-left: 1vmax;
+    display: flex;
+}
+.userInfoDiv-left>img{
+    width: 4vmax;
+    height: 4vmax;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 1px solid #4EDCD8;
+    padding: 0.1vmax;
+}
+.userInfoDiv-right{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-top: 2vmax;
+    margin-left: 0.1vmax;
+    padding-left: 0.7vmax;
+}
+.userInfoDiv-right>div>span>h6{
+    color: gray;
+    font-weight: 400;
+    font-size: 0.9vmax;
+}
+.userInfoDiv-right>div>span>h5{
+    margin-top: -0.2vmax;
+    font-weight: 500;
+    font-size: 1.05vmax;
+}
+.userInfoDiv-right>div>span{
+    text-align: center;
+}
+.postNumber{
+    margin-right: 7vmax;
+}
+.userInfoDiv-right-top{
+    height: 30%;
+}
+.userInfoDiv-right-bottom{
+    /* background-color: yellow; */
+    height: 60%;
+    padding: 0 0.2vmax;
+}
+.userInfoDiv-right-bottom>p{
+    width: 100%;
+    font-weight: 400;
+    
+}
+.userInfoDiv-right-bottom>button{
+    width: 8vmax;
+    height: 2vmax;
+    border-radius: 10px;
+    border: 0;
+   
+    
+}
+.userInfoDiv-right-bottom>button>a{
+   text-decoration: none;
+   color: black;
+
+}
+
