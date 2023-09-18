@@ -1,64 +1,74 @@
-<%- include("./partials/header") %>
-<nav class="nav">
-  <span class=""
-    ><i class="ri-menu-4-fill"></i><img class="ms-2" width="32" height="32" src="/images/icons8-cat-footprint-64 (1).png" alt="cat-footprint"/>
-    <h3 class="me-3 logo">Glee</h3></span
-  >
+<%- include("./partials/header") %> <%- include("./partials/nav") %>
 
-  <div class="serchBarDiv ms-4">
-    <img src="/images/search.svg" alt="picture" />
-    <h6 class="">Search</h6>
-  </div>
-   <% if(user){ %>
-    <button class="SignInbtn-joinPage"><a class="text-decoration-none text-dark" href="/profile">PROFILE</a></button>
-    <% }else{ %>
-      <button class="SignInbtn-joinPage"><a class="text-decoration-none text-dark" href="/signin">SIGN IN</a></button>
-      <% } %>
-  
-</nav>
-<div class="joinBoxContent">
-  <div class="sideOptions">
+<div class="feedBox">
+  <div class="feedSideBar">
     <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
-      <a href=""><img src="/images/homeIcon.svg" alt="">&nbsp; Home</a>
+      <a href=""><img src="/images/homeIcon.svg" alt="" />&nbsp; Home</a>
       <a href=""><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
       <a href=""><i class="ri-settings-line"></i> &nbsp; Setting</a>
-     
     </div>
-  
-    <div> <ul class="list-unstyled fs-5">
-      
-      <li class="createPost" href=""><i class="ri-add-line"></i> Create Post</li>
-    </ul></div>
-      <div class="sideOptions-Div3">
-      <div class=""><i class="ms-4 mt-1 ri-google-play-line"></i><i class="ms-4 mt-1 ri-apple-fill"></i></div>
-      <h6 class="ms-4 mt-2"><a class="text-decoration-none text-dark" href="/signout">LOG OUT</a></h6>
-
+    <div>
+      <span class="createPost"
+        ><i class="ri-gallery-upload-fill"></i> &nbsp; Upload</span
+      >
+    </div>
+    <div class="sideOptions-Div3">
+      <div class="">
+        <i class="ms-4 mt-1 ri-google-play-line"></i
+        ><i class="ms-4 mt-1 ri-apple-fill"></i>
+      </div>
+      <h6 class="ms-4 mt-2">English</h6>
       <div class="sideCardFooter ps-4">
-        <ul class="d-flex gap-3 list-unstyled ">
+        <ul class="d-flex gap-3 list-unstyled">
           <li>Terms</li>
           <li>Privacy</li>
           <li>FAQ</li>
         </ul>
-        <p class="">Made with <img src="/images/like_blue.svg" alt=""> by <br> <strong>ASHISH CHAKRAVARTI</strong></p>
+        <p class="">
+          Made with <img src="/images/like_blue.svg" alt="" /> by <br />
+          <strong>ASHISH CHAKRAVARTI</strong>
+        </p>
         <p class="">&copy 2023 Peeps Enterprises, Inc.</p>
-      <div class=""></div>
-
+        <div class=""></div>
       </div>
     </div>
   </div>
-  <div class="feedContainer">
+  <div class="feedBox-content">
     <div class="uploadDiv">
-      <span><p>Create new post </p><i class="closeUpload fs-5 mb-2 ri-close-line"></i></span>
-        <form enctype="multipart/form-data">
-          <i class="fs-1 ri-upload-fill"></i>
-          <p>Upload photos here</p>
-          <input class="form-control bg-info-subtle" type="file" >
-          <button class="btn bg-light w-50 mt-2">Upload</button>
-        </form>
-
-
+      <span
+        ><p>Upload Picture</p>
+        <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
+      ></span>
+      <form>
+        <i class="ri-upload-cloud-fill fs-1"></i>
+        <input class="form-control mt-3" type="file" />
+        <button class="">Upload</button>
+      </form>
     </div>
-
+    <div class="feedBox-content-left">
+      <div class="postBox">
+        <div class="post-top">
+          <img
+            src="https://images.unsplash.com/photo-1694875464499-334d2dc113a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+          <span>
+            <h6>@chakravartiii <br /> <span>5 days ago</span></h6>
+          </span>
+        </div>
+        <div class="post-imgBox">
+          <img src="https://images.unsplash.com/photo-1694843622261-6acd040beff9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="">
+        </div>
+        <span><i class="ri-heart-3-line"></i><p>5k</p><i class="ri-chat-3-line"></i><p>3421</p></span>
+        <p><span><strong>@chakravartiii</strong></span> &nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, sint. I wasn't born for the spotlight, I guess... </p>
+         <form >
+          <textarea class="form-control" rows="1" placeholder="Add a comment..."></textarea><button>Post</button>
+         </form>
+      </div>
+      
+    </div>
+    <div class="feedBox-content-right"></div>
   </div>
 </div>
+
 <%- include("./partials/footer") %>
