@@ -122,6 +122,12 @@ router.post("/change-password/:id",async(req,res,next)=>{
    }  
 });
 
+// ------------profile page ------------
+
+router.get("/profile",isLoggedIn,(req,res,next)=>{
+res.render("profile",{user:req.user})
+})
+
 // -------------ISloggedIn Function-------------
 
 function isLoggedIn(req,res,next){
