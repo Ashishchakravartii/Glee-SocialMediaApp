@@ -937,3 +937,15 @@ nav{
     object-fit: cover;
     object-position: center;
 }
+
+/* --------- edit profile ---------- */
+
+.Edit-Profile-Box{
+    width: 60%;
+    height: 70vh;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 8vmax;
+
+}

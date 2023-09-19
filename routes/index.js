@@ -1,11 +1,15 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-const passport= require("passport")
-const LocalStrategy= require("passport-local")
-const UserModel= require("../models/usermodel")
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const UserModel = require("../models/usermodel");
+
+const fs= require("fs")
+const upload= require("../utils/multer")
+
 passport.use(new LocalStrategy(UserModel.authenticate()));
 
-const {sendmail}= require("../utils/mail")
+const { sendmail } = require("../utils/mail");
 
 /* GET home page. */
 // router.get('/',isLoggedIn, function(req, res, next) {
@@ -23,69 +27,67 @@ router.get("/", function (req, res, next) {
 
 // -----------signup---------------
 
-router.get("/signup",(req,res,next)=>{
-  res.render("signup")
-})
-router.post("/signup",async(req,res,next)=>{
- try {
-   const { username, email, password } = req.body;
-   await UserModel.register({ username, email }, password);
-   res.redirect("/signin");
- } catch (error) {
-  res.send(error.message);
- }
- 
-})
-
+router.get("/signup", (req, res, next) => {
+  res.render("signup");
+});
+router.post("/signup", async (req, res, next) => {
+  try {
+    const { username, email, password } = req.body;
+    await UserModel.register({ username, email }, password);
+    res.redirect("/signin");
+  } catch (error) {
+    res.send(error.message);
+  }
+});
 
 // -----------signIn---------------
 
-router.get("/signin",(req,res,next)=>{
-  res.render("signin")
-})
+router.get("/signin", (req, res, next) => {
+  res.render("signin");
+});
 router.post(
   "/signin",
- passport.authenticate("local",{
-  successRedirect:"/home",
-  failureRedirect:"/signin"
- }),
+  passport.authenticate("local", {
+    successRedirect: "/home",
+    failureRedirect: "/signin",
+  }),
   (req, res, next) => {}
 );
 
 // -------------Home page =================
 
-router.get("/home",isLoggedIn,(req,res)=>{
-  res.render("homepage",{user:req.user})
-})
+router.get("/home", isLoggedIn, (req, res) => {
+  res.render("homepage", { user: req.user });
+});
 // ----------- SignOut--------------------
 
-router.get("/signout",(req,res,next)=>{
-  req.logOut(()=>{
-    res.redirect("/signin")
-  })
-})
+router.get("/signout", (req, res, next) => {
+  req.logOut(() => {
+    res.redirect("/signin");
+  });
+});
 
 // ----------- Reset --------------------
 
-router.get("/reset",(req,res,next)=>{
-  res.render("reset",{user:req.user})
-  console.log(req.user)
-})
+router.get("/reset", (req, res, next) => {
+  res.render("reset", { user: req.user });
+  console.log(req.user);
+});
 
-router.post("/reset/:id",async(req,res,next)=>{
-try {
-   const user= await UserModel.findById(req.params.id)
-   await user.changePassword(req.body.oldpassword, req.body.newpassword);
-   res.redirect("/signin")
-} catch (error) {
-  console.log(error)
-}
-})
+router.post("/reset/:id", async (req, res, next) => {
+  try {
+    const user = await UserModel.findById(req.params.id);
+    await user.changePassword(req.body.oldpassword, req.body.newpassword);
+    res.redirect("/signin");
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 // ----------------- Get mail page ---------------
 
-router.get("/getEmail",(req,res,next)=>{
-  res.render("getemail")
+router.get("/getEmail", (req, res, next) => {
+  res.render("getemail");
 });
 router.post("/getEmail", async (req, res, next) => {
   try {
@@ -103,38 +105,63 @@ router.post("/getEmail", async (req, res, next) => {
 
 // ---------------- forget PAssword----------
 
-router.get("/change-password/:id",async(req,res,next)=>{
-try {
-  const user = await UserModel.findById(req.params.id);
-   res.render("change-Password",{user})
-} catch (error) {
-  res.send(error)
-}
-})
-router.post("/change-password/:id",async(req,res,next)=>{
-   try {
+router.get("/change-password/:id", async (req, res, next) => {
+  try {
+    const user = await UserModel.findById(req.params.id);
+    res.render("change-Password", { user });
+  } catch (error) {
+    res.send(error);
+  }
+});
+router.post("/change-password/:id", async (req, res, next) => {
+  try {
     const user = await UserModel.findById(req.params.id);
     await user.setPassword(req.body.password);
     await user.save();
     res.redirect("/signin");
-   } catch (error) {
-    res.send(error)
-   }  
+  } catch (error) {
+    res.send(error);
+  }
 });
 
 // ------------profile page ------------
 
-router.get("/profile",isLoggedIn,(req,res,next)=>{
-res.render("profile",{user:req.user})
-})
+router.get("/profile", isLoggedIn, (req, res, next) => {
+  res.render("profile", { user: req.user });
+});
+
+// ----------- avatar ---------------------------
+
+router.post(
+  "/avatar",
+  upload.single("avatar"),
+  isLoggedIn,
+  async (req, res, next) => {
+    try {
+      if(req.user.avatar !== "default.png"){
+        fs.unlinkSync("./public/images/userImages/" + req.user.avatar);
+      }
+      req.user.avatar=req.file.filename;
+      req.user.save();
+      res.redirect("/profile");
+    } catch (error) {
+      res.send(error)
+    }
+  }
+);
+// ----------------- editProfile---------
+
+router.get("/editProfile",(req,res)=>{
+  res.render("editProfile");
+});
 
 // -------------ISloggedIn Function-------------
 
-function isLoggedIn(req,res,next){
-  if(req.isAuthenticated()){
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
     return next();
   }
-  res.redirect("/signin")
+  res.redirect("/signin");
 }
 
 module.exports = router;
