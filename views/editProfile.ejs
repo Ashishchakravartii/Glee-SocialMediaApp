@@ -36,32 +36,33 @@
     </div>
   </div>
   <div class="uploadDiv">
-      <span
-        ><p>Upload Picture</p>
-        <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
-      ></span>
-      <form>
-        <i class="ri-upload-cloud-fill fs-1"></i>
-        <input class="form-control mt-3" type="file" />
-        <button class="">Upload</button>
-      </form>
-    </div>
-  <div class="Edit-Profile-Box">
-    <h3>Edit Profile</h3>
-    <div><img src="" alt=""> <h4>Chakravartiii</h4></div>
-    <form action="/avatar" method="post" enctype="multipart/form-data">
-        <input class="form-control mt-3 " type="file" name="avatar" />
-        <button class="">Upload</button>
-      </form>
-    <form action="">
-      <label for="bio">Bio</label>
-      <textarea name="bio" placeholder="Edit Bio"></textarea>
-      <button>Update Profile</button>
+    <span
+      ><p>Upload Picture</p>
+      <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
+    ></span>
+    <form>
+      <i class="ri-upload-cloud-fill fs-1"></i>
+      <input class="form-control mt-3" type="file" />
+      <button class="">Upload</button>
     </form>
-
-   
   </div>
-  
+  <div class="Edit-Profile-Box">
+    <h3 class="edit-Head">Edit Profile</h3>
+    <div class="">
+      <img src="/images/userImages/<%= user.avatar%>" alt="" />
+      <p><%= user.username%></p>
+    </div>
+    <form action="/avatar" method="post" enctype="multipart/form-data">
+      <h5>Update Profile Picture</h5>
+      <input required class="form-control" type="file" name="avatar" />
+      <button class="">Upload</button>
+    </form>
+    <form action="">
+      <h5>Bio</h5>
+      <textarea class="form-control" name="bio" placeholder="Edit Bio"></textarea>
+      <button>Submit</button>
+    </form>
+  </div>
 
   <div></div>
 </div>

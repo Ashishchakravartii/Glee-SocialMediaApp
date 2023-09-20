@@ -25,6 +25,8 @@ const UserModel = mongoose.Schema({
     type: String,
     default: "default.png",
   },
+  posts:[{type:mongoose.Schema.Types.ObjectId,ref:"post"}],
+  bio: String,
 });
 UserModel.plugin(plm)
 const user= mongoose.model("User",UserModel);

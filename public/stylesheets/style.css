@@ -596,7 +596,7 @@ font-family: 'Macondo', cursive;
     justify-content: center;
     align-items: center;
 }
-.uploadDiv form>input{
+.uploadDiv >form>input{
    width: 60%;
 }
 .uploadDiv form>button{
@@ -685,8 +685,8 @@ nav{
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
 }
 .postBox{
-    width: 55%;
-    height: 37vmax;
+    width: 50%;
+    height: 40vmax;
     margin-top: 1.5vmax;
     border-radius: 40px;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
@@ -739,14 +739,14 @@ nav{
     padding-top: 0.3vmax;
 }
 .postBox>span>p{
-    margin-top: 0.7vmax;
+    margin-top: 0.8vmax;
 }
 .postBox>span>i{
     font-size: 1.7vmax;
     font-weight: 100;
 }
 .postBox>p{
-    padding: 0 0.8vmax;
+    padding:0.6vmax 1.5vmax;
 }
 .postBox>form{
     display: flex;
@@ -947,5 +947,90 @@ nav{
     border-radius: 50px;
     margin: auto;
     margin-top: 8vmax;
+    display: flex;
+    flex-direction: column;
+    padding: 2vmax;
+    gap: 2vmax;
 
+}
+.Edit-Profile-Box>div>img{
+    width: 2.8vmax;
+    border-radius: 50%;
+}
+.Edit-Profile-Box>div{
+    padding: 1vmax;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Edit-Profile-Box>div>p{
+    font-size: 1.1vmax;
+    margin-left: 2vmax;
+}
+.Edit-Profile-Box>form:nth-child(3){
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    gap: 2vmax;
+}
+.Edit-Profile-Box>form:nth-child(3)>input{
+    width: 40%;
+    background-color: rgb(227, 227, 227);
+
+}
+.Edit-Profile-Box>form:nth-child(3)>button{
+   width: 5vmax;
+   height: 2vmax;
+   border: 0;
+   border-radius: 10px;
+   margin-left: -6vmax;
+}
+.Edit-Profile-Box>form:nth-child(4){
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    gap: 2vmax;
+}
+.Edit-Profile-Box>form:nth-child(4)>input{
+    width: 40%;
+    background-color: rgb(227, 227, 227);
+
+}
+.Edit-Profile-Box>form:nth-child(4)>button{
+   width: 5vmax;
+   height: 2vmax;
+   border: 0;
+   border-radius: 10px;
+  margin-left: -6vmax;
+}
+.Edit-Profile-Box>form:nth-child(4)>textarea{
+    resize: none;
+    width: 40%;
+    height: 3.5vmax;
+
+
+}
+.edit-Head{
+    font-weight: 400;
+}
+
+
+/* ----------------------- */
+.ProfileIcon{
+    border: 1px solid gray;
+    background-color: transparent;
+    border-radius: 50px;
+    padding: 0.1vmax;
+    margin-left: -1vmax;
+    
+}
+.ProfileIcon>a>img{
+    border-radius: 50px;
+    width: 2.5vmax;
+    height: 2.5vmax;
+    border: 0;
 }

@@ -40,9 +40,10 @@
         ><p>Upload Picture</p>
         <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
       ></span>
-      <form>
+       <form action="/savePost" method="post" enctype="multipart/form-data">
         <i class="ri-upload-cloud-fill fs-1"></i>
-        <input class="form-control mt-3" type="file" />
+        <input class="form-control" type="file" name="media">
+        <input class="form-control mt-3" type="text" name="caption" placeholder="Caption">
         <button class="">Upload</button>
       </form>
     </div>
@@ -54,14 +55,14 @@
     </div>
     <div class="userProfile-bottom">
       <div class="userProfileSameProperty-Div">
-        <h3>Ashish Chakravarti</h3>
+        <h3><%=user.username%></h3>
         <button><a class="text-decoration-none text-dark" href="/editProfile">Edit Profile</a></button>
       </div>
       <div class="userProfileSameProperty-Div">
-        <h6 class="text-secondary">@chakravartiii</h6>
+        <h6 class="text-secondary"><%=user.username%></h6>
       </div>
       <div class="userProfileSameProperty-Div">
-        <h6>&bull;<span class="text-info-emphasis">23</span> Posts</h6>
+        <h6>&bull;<span class="text-info-emphasis"><%= posts.length %></span> Posts</h6>
         <h6>&bull;<span class="text-info-emphasis">2.2k</span> Likes</h6>
         <h6>&bull;<span class="text-info-emphasis">1.4k</span> Comments</h6>
       </div>
@@ -77,9 +78,11 @@
   </div>
   <div class="AllPosts">
     <h3><i class="text-info ri-grid-fill"></i> Your Posts</h3>
+    <% posts.forEach((post) => { %>
     <div>
-      <img src="https://images.unsplash.com/photo-1694829116171-de443068f898?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+      <img src="/images/posts/<%= post.media %>" alt="">
     </div>
+    <%})%>
   </div>
 
   <div></div>

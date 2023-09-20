@@ -3,9 +3,11 @@ var router = express.Router();
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const UserModel = require("../models/usermodel");
+const PostModel = require("../models/postsModel");
 
-const fs= require("fs")
-const upload= require("../utils/multer")
+const fs = require("fs");
+const upload = require("../utils/multer");
+const uploadPost = require("../utils/uploadPost");
 
 passport.use(new LocalStrategy(UserModel.authenticate()));
 
@@ -56,9 +58,35 @@ router.post(
 
 // -------------Home page =================
 
-router.get("/home", isLoggedIn, (req, res) => {
-  res.render("homepage", { user: req.user });
-});
+router.get("/home", isLoggedIn, async (req, res) => {
+  try {
+    // const allPost = await PostModel.find();
+    // res.render("homepage", { user: req.user, allPost });
+   PostModel.find({})
+     .populate("user", ["username","avatar"])
+     .then((posts) => {
+       // Handle successful query results here
+     
+       res.render("homepage", { user: req.user, allPost: posts });
+       
+     })
+     .catch((err) => {
+       // Handle errors here
+       console.error("Error fetching posts:", err);
+     });
+
+  } catch (error) {
+    res.send(error);
+  }
+})
+// router.get("/home", isLoggedIn, async (req, res) => {
+//   try {
+//     const allPost = await PostModel.find();
+//     res.render("homepage", { user: req.user, allPost });
+//   } catch (error) {
+//     res.send(error);
+//   }
+// });
 // ----------- SignOut--------------------
 
 router.get("/signout", (req, res, next) => {
@@ -126,8 +154,14 @@ router.post("/change-password/:id", async (req, res, next) => {
 
 // ------------profile page ------------
 
-router.get("/profile", isLoggedIn, (req, res, next) => {
-  res.render("profile", { user: req.user });
+router.get("/profile", isLoggedIn, async (req, res, next) => {
+  try {
+    const { posts } = await req.user.populate("posts");
+    console.log(posts);
+    res.render("profile", { user: req.user, posts });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 // ----------- avatar ---------------------------
@@ -138,21 +172,45 @@ router.post(
   isLoggedIn,
   async (req, res, next) => {
     try {
-      if(req.user.avatar !== "default.png"){
+      if (req.user.avatar !== "default.png") {
         fs.unlinkSync("./public/images/userImages/" + req.user.avatar);
       }
-      req.user.avatar=req.file.filename;
+      req.user.avatar = req.file.filename;
       req.user.save();
       res.redirect("/profile");
     } catch (error) {
-      res.send(error)
+      res.send(error);
     }
   }
 );
+// -------------- posts ------------------
+
+router.post(
+  "/savePost",
+  uploadPost.single("media"),
+  isLoggedIn,
+  async (req, res, next) => {
+    const { caption } = req.body;
+    const media = req.file.filename; // Multer stores the uploaded file's path
+
+    // Create a new Post document and save it to your database
+    const newPost = new PostModel({
+      caption,
+      media,
+      timestamp: Date.now(),
+    });
+    newPost.user = req.user._id;
+    req.user.posts.push(newPost._id);
+    await newPost.save();
+    await req.user.save();
+    res.redirect("/profile");
+  }
+);
+
 // ----------------- editProfile---------
 
-router.get("/editProfile",(req,res)=>{
-  res.render("editProfile");
+router.get("/editProfile",isLoggedIn, (req, res) => {
+  res.render("editProfile", { user: req.user });
 });
 
 // -------------ISloggedIn Function-------------
