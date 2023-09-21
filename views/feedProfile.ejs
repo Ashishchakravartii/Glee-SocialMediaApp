@@ -35,15 +35,6 @@
       </div>
     </div>
   </div>
-  <div class="postOptionDiv">
-   <h6>Options</h6>
-    <h6 class="text-dark">See Profile</h5>
-      <% if (post.user.username  === user.username) { %>
-        <h6 class="text-danger"><a class="text-danger text-decoration-none" href="/deletePost/<%= id %>">Delete</a></h5>
-    <% } %>
-    <h6 class="text-dark postOptionDiv-cancel-btn">Cancel</h6>
-
-  </div>
   <div class="uploadDiv">
     <span
       ><p>Upload Picture</p>
@@ -61,30 +52,42 @@
       <button class="">Upload</button>
     </form>
   </div>
-  <div class="PostViewWindow">
-    <div class="PostViewWindow-img">
-      <img src="/images/posts/<%= post.media %>" alt="" />
+  <div class="userProfile">
+    <div class="userProfile-top">
+      <img src="/images/userImages/<%= otherUser.avatar %>" />
     </div>
-    <div class="PostViewWindow-content">
-      <div class="PostViewWindow-content-top">
-        <div>
-          <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
-          <p><%= post.user.username %></p>
-        </div>
-        <i class="moreOptionPost ri-more-fill"></i>
+    <div class="userProfile-bottom">
+      <div class="userProfileSameProperty-Div">
+        <h3><%=otherUser.username%></h3>
       </div>
-      <div class="PostViewWindow-content-center">
-        <ul class="list-unstyled">
-          <li><img src="/images/userImages/<%= post.user.avatar %>" alt="" /> <strong> &nbsp;&nbsp;<%= post.user.username %></strong>&nbsp; <%= post.caption %></li>
-        </ul>
+      <div class="userProfileSameProperty-Div">
+        <h6 class="text-secondary"><%=otherUser.username%></h6>
       </div>
-      <div class="PostViewWindow-content-bottom">
-        <form>
-      <textarea class="" rows="1" placeholder="Add a comment..."></textarea><button>Post</button>
-    </form>
+      <div class="userProfileSameProperty-Div">
+        <h6>
+          &bull;<span class="text-info-emphasis"><%= posts.length %></span>
+          Posts
+        </h6>
+        <h6>&bull;<span class="text-info-emphasis">2.2k</span> Likes</h6>
+        <h6>&bull;<span class="text-info-emphasis">1.4k</span> Comments</h6>
+      </div>
+      <div class="bio-Profile-Div">
+        <p><%=otherUser.bio%></p>
       </div>
     </div>
   </div>
+  <div class="AllPosts">
+    <h3><i class="text-info ri-grid-fill"></i> Posts</h3>
+    <% posts.forEach((post) => { %>
+    <a href="/postView/<%=post._id  %>">
+      <div>
+        <img src="/images/posts/<%= post.media %>" alt="" /></div
+    ></a>
 
-  <%- include("./partials/footer") %>
+    <%})%>
+  </div>
+
+  <div></div>
 </div>
+
+<%- include("./partials/footer") %>

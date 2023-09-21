@@ -66,7 +66,6 @@ router.get("/home", isLoggedIn, async (req, res) => {
      .populate("user", ["username","avatar"])
      .then((posts) => {
        // Handle successful query results here
-     
        res.render("homepage", { user: req.user, allPost:posts });
        
      })
@@ -164,6 +163,25 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
   }
 });
 
+// ------------------ feed user profile ----------
+
+router.get("/feedProfile/:id",async(req,res,next)=>{
+try {
+   const { posts } = await UserModel.findById(req.params.id).populate("posts");
+   const otherUser = await UserModel.findById(req.params.id)
+   if(otherUser.username === req.user.username){
+    res.redirect("/profile")
+   }
+   res.render("feedProfile", { otherUser,user:req.user, posts });
+
+  
+} catch (error) {
+  console.log(error);
+}
+});
+
+
+
 // ----------- avatar ---------------------------
 
 router.post(
@@ -203,7 +221,7 @@ router.get("/postView/:id",isLoggedIn,async(req,res,next)=>{
     // const post= await PostModel.findById(req.params.id);
 
        PostModel.findById(req.params.id)
-       .populate("user", ["username", "avatar"])
+       .populate("user", ["username", "avatar","_id"])
        .then((posts) => {
     //      // Handle successful query results here
          res.render("PostView", { user: req.user, post: posts, id:req.params.id });
