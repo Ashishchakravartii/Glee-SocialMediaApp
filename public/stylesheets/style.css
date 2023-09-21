@@ -1,1165 +1,1118 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 html,
-body{
-    width: 100%;
-    height: 100%;
-     overflow-x: hidden;
-
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
-.ExplorePage{
-    width: 100vw;
-    height: 100%;
-    background-image: url("/images/elephant final.jpg");
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    display: flex;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.ExplorePage {
+  width: 100vw;
+  height: 100%;
+  background-image: url("/images/elephant final.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.ExplorePageBox{
-    width: 80%;
-    height: 90%;
-    border-radius: 10px;
-    background-color: white;
-    background-size: cover;
-    background-position: center;
-        background-image: url("/images/elephant final.jpg");
+.ExplorePageBox {
+  width: 80%;
+  height: 90%;
+  border-radius: 10px;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/images/elephant final.jpg");
+}
+.ExplorePageBox-top {
+  width: 100%;
+  height: 5%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.ExplorePageBox-bottom {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+.ExplorePageBox-top > ul {
+  gap: 2vmax;
+  display: flex;
+  margin-top: 2vmax;
+  margin-left: 8vmax;
+  color: white;
+  list-style: none;
+}
+.ExplorePageBox-top > ul > li {
+  /* font-family: 'Phudu', cursive; */
+  font-family: "Encode Sans SC", sans-serif;
+  font-weight: 500;
 
+  font-size: 0.8vmax;
+  letter-spacing: 0.1vmax;
 }
-.ExplorePageBox-top{
-    width: 100%;
-    height: 5%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-
+.ExplorePageBox-LeftContent {
+  width: 60%;
+  height: 100%;
+  /* font-family: 'Encode Sans SC', sans-serif; */
+  font-family: "Roboto";
+  color: white;
+  padding-left: 6vmax;
+  padding-top: 2vmax;
 }
-.ExplorePageBox-bottom{
-    width: 100%;
-    height: 90%; 
-    display: flex;
+.ExplorePageBox-LeftContent h1,
+.ExplorePageBox-LeftContent h2 {
+  font-weight: 900;
 }
-.ExplorePageBox-top>ul{
-    gap: 2vmax;
-    display: flex;
-    margin-top: 2vmax;
-    margin-left: 8vmax;
-    color: white;
-    list-style: none;
+.ExplorePageBox-LeftContent h1 {
+  font-size: 12vmax;
+  opacity: 0.3;
 }
-.ExplorePageBox-top>ul>li{
-   /* font-family: 'Phudu', cursive; */
-font-family: 'Encode Sans SC', sans-serif;
-font-weight: 500;
-
-
-   font-size: 0.8vmax;
-   letter-spacing: 0.1vmax;
+.ExplorePageBox-LeftContent h2 {
+  font-size: 3.2vmax;
+  word-spacing: 0.2vmax;
+  font-weight: 600;
+  letter-spacing: 0.1vmax;
+  margin-top: 2vmax;
 }
-.ExplorePageBox-LeftContent{
-    width: 60%;
-    height: 100%;
-/* font-family: 'Encode Sans SC', sans-serif; */
-font-family: "Roboto";
-color: white;
-padding-left: 6vmax;
-padding-top: 2vmax;
-
-}
-.ExplorePageBox-LeftContent h1,.ExplorePageBox-LeftContent h2{
-    font-weight: 900;
-
-}
-.ExplorePageBox-LeftContent h1{
-    font-size: 12vmax;
-    opacity: 0.3;
-}
-.ExplorePageBox-LeftContent h2{
-    font-size: 3.2vmax;
-    word-spacing: 0.2vmax;
-    font-weight: 600;
-    letter-spacing: 0.1vmax;
-    margin-top: 2vmax;
-    
-}
-.explore{
-    width: 15vmax;
-    height:3vmax;
-    color: white;
-    background-color: transparent;
-    border: 2px solid rgba(229, 227, 227, 0.342);
-    margin-top: 3vmax;
-    border-radius: 50px;
-    font-weight: 300;
-font-family: 'Encode Sans SC', sans-serif;
-
+.explore {
+  width: 15vmax;
+  height: 3vmax;
+  color: white;
+  background-color: transparent;
+  border: 2px solid rgba(229, 227, 227, 0.342);
+  margin-top: 3vmax;
+  border-radius: 50px;
+  font-weight: 300;
+  font-family: "Encode Sans SC", sans-serif;
 }
 
-.ExplorePageBox-RightContent{
-    width: 40%;
-    height: 100%;
-    
+.ExplorePageBox-RightContent {
+  width: 40%;
+  height: 100%;
 }
-.ExplorePageBox-RightContent >div{
-    width: 75%;
-    height: 32%;
-    margin-top: 1vmax;
-    border-radius: 10px;
-    margin-left: 5vmax;
-    overflow: hidden;
-    opacity: 0.9;
-}
-
-.imgBox1{
-    background-image: url("https://images.unsplash.com/photo-1498855926480-d98e83099315?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
-    background-size: 200%;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-    padding-left: 2vmax;
-    
-}
-.imgBox1 > h1{
-    font-size: 8.5vmax;
-    font-weight: 500;
-    margin-left: 12vmax;
-    margin-top: -4.5vmax;
-    -webkit-text-stroke: 0.5px #f1e7df;
-    opacity: 0.7;
-
-    
-
-}
-.imgBox1 > h3{
-    margin-top: 2vmax;
-    letter-spacing: 0.2vmax;
-    font-weight: 700;
-}
-.imgBox1 >p{
-    letter-spacing: 0.1vmax;
-}
-.imgBox2{
-    background-image: url("https://images.unsplash.com/photo-1617868634099-47f2f38d6be9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1933&q=80");
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-    padding-left: 2vmax;
-}
-.imgBox2 > h1{
-    font-size: 8.5vmax;
-    font-weight: 500;
-    margin-left: 12vmax;
-    margin-top: -4.5vmax;
-    -webkit-text-stroke: 0.5px #f1e7df;
-    opacity: 0.7;
-
-    
-
-}
-.imgBox2 > h3{
-    margin-top: 2vmax;
-    letter-spacing: 0.2vmax;
-    font-weight: 700;
-}
-.imgBox2 >p{
-    letter-spacing: 0.1vmax;
-}
-.imgBox3{
-    background-image: url("https://images.unsplash.com/photo-1508166093217-f35d00c95fca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80");
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-    padding-left: 2vmax;
-}
-.imgBox3 > h1{
-    font-size: 8.5vmax;
-    font-weight: 500;
-    margin-left: 12vmax;
-    margin-top: -4.5vmax;
-    -webkit-text-stroke: 0.5px #f1e7df;
-    opacity: 0.7;
-
-    
-
-}
-.imgBox3 > h3{
-    margin-top: 2vmax;
-    letter-spacing: 0.2vmax;
-    font-weight: 700;
-}
-.imgBox3 >p{
-    letter-spacing: 0.1vmax;
+.ExplorePageBox-RightContent > div {
+  width: 75%;
+  height: 32%;
+  margin-top: 1vmax;
+  border-radius: 10px;
+  margin-left: 5vmax;
+  overflow: hidden;
+  opacity: 0.9;
 }
 
-nav{
-    width: 100vw;
-    height: 12vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.imgBox1 {
+  background-image: url("https://images.unsplash.com/photo-1498855926480-d98e83099315?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-size: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding-left: 2vmax;
 }
-nav i{
-    font-size: 2vmax;
+.imgBox1 > h1 {
+  font-size: 8.5vmax;
+  font-weight: 500;
+  margin-left: 12vmax;
+  margin-top: -4.5vmax;
+  -webkit-text-stroke: 0.5px #f1e7df;
+  opacity: 0.7;
 }
-.serchBarDiv{
-    width: 80%;
-    height: 40%;
-    border-radius: 50px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    padding-left: 1vmax;
+.imgBox1 > h3 {
+  margin-top: 2vmax;
+  letter-spacing: 0.2vmax;
+  font-weight: 700;
+}
+.imgBox1 > p {
+  letter-spacing: 0.1vmax;
+}
+.imgBox2 {
+  background-image: url("https://images.unsplash.com/photo-1617868634099-47f2f38d6be9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1933&q=80");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding-left: 2vmax;
+}
+.imgBox2 > h1 {
+  font-size: 8.5vmax;
+  font-weight: 500;
+  margin-left: 12vmax;
+  margin-top: -4.5vmax;
+  -webkit-text-stroke: 0.5px #f1e7df;
+  opacity: 0.7;
+}
+.imgBox2 > h3 {
+  margin-top: 2vmax;
+  letter-spacing: 0.2vmax;
+  font-weight: 700;
+}
+.imgBox2 > p {
+  letter-spacing: 0.1vmax;
+}
+.imgBox3 {
+  background-image: url("https://images.unsplash.com/photo-1508166093217-f35d00c95fca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  padding-left: 2vmax;
+}
+.imgBox3 > h1 {
+  font-size: 8.5vmax;
+  font-weight: 500;
+  margin-left: 12vmax;
+  margin-top: -4.5vmax;
+  -webkit-text-stroke: 0.5px #f1e7df;
+  opacity: 0.7;
+}
+.imgBox3 > h3 {
+  margin-top: 2vmax;
+  letter-spacing: 0.2vmax;
+  font-weight: 700;
+}
+.imgBox3 > p {
+  letter-spacing: 0.1vmax;
+}
 
+nav {
+  width: 100vw;
+  height: 12vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-nav span{
-    width: 5vmax;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav i {
+  font-size: 2vmax;
 }
-.serchBarDiv img{
-    width: 1.1vmax;
-    
+.serchBarDiv {
+  width: 80%;
+  height: 40%;
+  border-radius: 50px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding-left: 1vmax;
 }
-.serchBarDiv h6{
-   color: #b7b4b1;
-   font-weight: 400;
-   margin-left: 0.5vmax;
-   margin-top: 0.3vmax;
-    
+nav span {
+  width: 5vmax;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.SignInbtn-joinPage{
-    width: 8vmax;
-    height: 2.5vmax;
-    background-color: #4EDCD8;
-    /* background-color: #4EDCD8; */
-    border: none;
-    border-radius: 50px;
-    animation: shadow-animation cubic-bezier(0.22, 0.61, 0.36, 1) 2s infinite;
+.serchBarDiv img {
+  width: 1.1vmax;
 }
-@keyframes shadow-animation{
-    0%{
+.serchBarDiv h6 {
+  color: #b7b4b1;
+  font-weight: 400;
+  margin-left: 0.5vmax;
+  margin-top: 0.3vmax;
+}
+.SignInbtn-joinPage {
+  width: 8vmax;
+  height: 2.5vmax;
+  background-color: #4edcd8;
+  /* background-color: #4EDCD8; */
+  border: none;
+  border-radius: 50px;
+  animation: shadow-animation cubic-bezier(0.22, 0.61, 0.36, 1) 2s infinite;
+}
+@keyframes shadow-animation {
+  0% {
+    box-shadow: 0 0 5px 0px rgba(78, 220, 216, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px 20px rgba(78, 220, 216, 0);
+  }
+}
 
-        box-shadow: 0 0 5px 0px rgba(78, 220, 216, 0.6);
-    }
-    100%{
-        box-shadow: 0 0 5px 20px rgba(78, 220, 216, 0);
-    }
+.joinBoxContent {
+  width: 100vw;
+  height: 89vh;
+  display: flex;
+  margin-top: 5vmax;
 }
-
-.joinBoxContent{
-    width: 100vw;
-    height: 89vh;
-    display: flex;
-    margin-top: 5vmax;
+.sideOptions {
+  width: 18vw;
+  height: 100%;
 }
-.sideOptions{
-    width: 18vw;
-    height: 100%;
-
+.sideOptions > div {
+  width: 100%;
+  height: 33.33%;
 }
-.sideOptions >div{
-    width: 100%;
-    height: 33.33%;
+.sideOptions > div > a > img {
+  width: 1.8vmax;
 }
-.sideOptions >div>a>img{
-    width: 1.8vmax;
+.sideOptions > div > a > i {
+  font-size: 1.5vmax;
+  font-weight: 100;
 }
-.sideOptions >div>a>i{
-    font-size: 1.5vmax;
-    font-weight: 100;
+.sideOptions > div > a {
+  text-decoration: none;
+  color: black;
+  font-size: 1vmax;
 }
-.sideOptions >div>a{
-    text-decoration: none;
-    color: black;
-    font-size: 1vmax;
+.HastagBox {
+  width: 35vw;
+  height: 100%;
+  padding-top: 1vmax;
 }
-.HastagBox{
-     width: 35vw;
-    height: 100%;
-    padding-top: 1vmax;
+.sideOptions-Div3 {
+  font-size: 0.79vmax;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.sideOptions-Div3{
-    font-size: 0.79vmax;
-    color: gray;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.sideOptions-Div3 > div > p > img {
+  width: 1vmax;
 }
-.sideOptions-Div3>div>p>img{
-    width: 1vmax;
+.sideOptions-Div3 > div > i {
+  font-size: 1.3vmax;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  color: black;
+  padding: 0.5vmax;
 }
-.sideOptions-Div3>div>i{
-    font-size: 1.3vmax;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    color: black;
-    padding: 0.5vmax;
+.sideOptions-Div3 > h6 {
+  width: 5vmax;
+  font-size: 0.8vmax;
+  font-weight: 500;
+  border-radius: 50px;
+  text-align: center;
+  padding: 0.5vmax 1vmax;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
 }
-.sideOptions-Div3>h6{
-    width: 5vmax;
-    font-size: 0.8vmax;
-    font-weight: 500;
-    border-radius: 50px;
-    text-align: center;
-    padding: 0.5vmax 1vmax;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-
+.sideCardFooter {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.sideCardFooter{
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    
-    
-}
-.HastagBox>div{
-    width: 90%;
-    height: 5vmax;
-    margin-top: 1.2vmax;
-    border-radius: 35px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.8vmax;
+.HastagBox > div {
+  width: 90%;
+  height: 5vmax;
+  margin-top: 1.2vmax;
+  border-radius: 35px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.8vmax;
 }
 .HastagBox > div:hover {
-    transition: all 2s ease;
-    background-color: #4EDCD8;
+  transition: all 2s ease;
+  background-color: #4edcd8;
 }
-.HastagBox>div>img{
-    width: 1vmax;
+.HastagBox > div > img {
+  width: 1vmax;
 }
-.HastagBox>div>h5{
-    font-size: 1vmax;
-    font-weight:500;
+.HastagBox > div > h5 {
+  font-size: 1vmax;
+  font-weight: 500;
 }
-.HastagBox>div>h5>span{
-    font-size: 0.85vmax;
-    color: rgb(160, 156, 156);
-    font-weight: 400;
-}
-
-.BrandContent{
-     width: 52vw;
-    height: 88vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-.BrandContent >img{
-    /* width: 90%; */
-    width:30vmax;
-    /* margin-left: 12vmax; */
-    margin-top: -5vmax;
-    border-radius: 40px;
-    /* box-shadow:0 0 24px rgba(0, 0, 0, 0.1); */
-}
-.joinBtn{
-    width: 20vmax;
-    color: white;
-    height: 3vmax;
-   border: none;
-   background-color: #4EDCD8;
-   border-radius: 50px;
-   animation: shadow-animation 2s infinite;
-}
-@keyframes shadow-animation{
-    0%{
-
-        box-shadow: 0 0 5px 0px rgba(78, 220, 216, 0.6);
-    }
-    100%{
-        box-shadow: 0 0 5px 20px rgba(78, 220, 216, 0);
-    }
+.HastagBox > div > h5 > span {
+  font-size: 0.85vmax;
+  color: rgb(160, 156, 156);
+  font-weight: 400;
 }
 
+.BrandContent {
+  width: 52vw;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.BrandContent > img {
+  /* width: 90%; */
+  width: 30vmax;
+  /* margin-left: 12vmax; */
+  margin-top: -5vmax;
+  border-radius: 40px;
+  /* box-shadow:0 0 24px rgba(0, 0, 0, 0.1); */
+}
+.joinBtn {
+  width: 20vmax;
+  color: white;
+  height: 3vmax;
+  border: none;
+  background-color: #4edcd8;
+  border-radius: 50px;
+  animation: shadow-animation 2s infinite;
+}
+@keyframes shadow-animation {
+  0% {
+    box-shadow: 0 0 5px 0px rgba(78, 220, 216, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px 20px rgba(78, 220, 216, 0);
+  }
+}
 
 /* =============================== SignIn ==================================== */
 
-.SignInContainer{
-    width: 55vw;
-    height: 95%;
-    margin: auto;
-    margin-top: 2vmax;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    background-repeat: no-repeat;
-    background-size: 30%;
-    background-position: center;
-    scale: 0.95;
+.SignInContainer {
+  width: 55vw;
+  height: 95%;
+  margin: auto;
+  margin-top: 2vmax;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
+  scale: 0.95;
 }
-.signInBoxTop{
-    width: 100%;
-    height: 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:  0 2.5vmax;
-font-family: 'Macondo', cursive;
-    
+.signInBoxTop {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5vmax;
+  font-family: "Macondo", cursive;
 }
-.signInBoxContentDiv{
-    width: 100%;
-    height: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vmax;
+.signInBoxContentDiv {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vmax;
 }
-.signInBoxContentDiv> span{
- display: flex;
- margin-top: 1vmax;
+.signInBoxContentDiv > span {
+  display: flex;
+  margin-top: 1vmax;
 }
-.signInBoxContentDiv> span>img{
-    width: 1.2vmax;
-    height: 3vmax;
+.signInBoxContentDiv > span > img {
+  width: 1.2vmax;
+  height: 3vmax;
 }
-.signInBoxContentDiv> img{
-    width:15vmax;
-    
+.signInBoxContentDiv > img {
+  width: 15vmax;
 }
-.SignInContainer form{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-around;   
-     align-items: center;
-     margin-top: 1vmax;
-
-
+.SignInContainer form {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1vmax;
 }
-.SignInContainer form>input{
-    width: 50%;
-    height: 16%;
-    background-color: transparent;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    border: 0;
-    border-radius: 50px;
-    padding-left: 2vmax;
+.SignInContainer form > input {
+  width: 50%;
+  height: 16%;
+  background-color: transparent;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  border: 0;
+  border-radius: 50px;
+  padding-left: 2vmax;
 }
-.SignInContainer form>button{
-    width: 10vmax;
-    height: 3vmax;
-    background-color: #4EDCD8;
-    border-radius: 50px;
-    border: 0;
-    margin-top: 0.5vmax;
+.SignInContainer form > button {
+  width: 10vmax;
+  height: 3vmax;
+  background-color: #4edcd8;
+  border-radius: 50px;
+  border: 0;
+  margin-top: 0.5vmax;
 }
-.SignInContainer>form>h6>span,.SignInContainer>form>h6>a{
-    color: #4EDCD8;
+.SignInContainer > form > h6 > span,
+.SignInContainer > form > h6 > a {
+  color: #4edcd8;
 }
-.logo{
-    font-family: 'Macondo', cursive;
+.logo {
+  font-family: "Macondo", cursive;
 }
 
 /* ====================================  Forget  ================================== */
 
-.forgetPageContainer{
-    width: 100vw;
-    height: 100vh;
+.forgetPageContainer {
+  width: 100vw;
+  height: 100vh;
 }
-.forget-top{
-    width: 100vw;
-    height: 9vh;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    padding-left: 25vmax;
+.forget-top {
+  width: 100vw;
+  height: 9vh;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding-left: 25vmax;
 }
-.forgetCard{
-    width: 25vw;
-    height: 70vh;
-    margin: auto;
-    margin-top: 3vmax;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    padding: 2vmax 1.5vmax 0 1.5vmax;
-
+.forgetCard {
+  width: 25vw;
+  height: 70vh;
+  margin: auto;
+  margin-top: 3vmax;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  padding: 2vmax 1.5vmax 0 1.5vmax;
 }
-.forgetCard>form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.forgetCard > form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.forgetCard>form>input{
-    width: 70%;
-    height: 2vmax;
-    border: 1px solid gray;
-    border-radius: 10px;
+.forgetCard > form > input {
+  width: 70%;
+  height: 2vmax;
+  border: 1px solid gray;
+  border-radius: 10px;
 }
-.forgetCard>form>button{
-    width: 70%;
-    height: 2vmax;
-    background-color: #4EDCD8;
-    border: 0;
-    border-radius: 10px;
-    margin-top: 1vmax;
-    color: white;
-    font-weight: 400;
+.forgetCard > form > button {
+  width: 70%;
+  height: 2vmax;
+  background-color: #4edcd8;
+  border: 0;
+  border-radius: 10px;
+  margin-top: 1vmax;
+  color: white;
+  font-weight: 400;
 }
-.backToLoginBtn{
-    border-top: 1px solid rgb(209, 203, 203);
-    width: 100%;
-    height: 2.2vmax;
-    padding-top: 0.7vmax;
-    color: gray;
+.backToLoginBtn {
+  border-top: 1px solid rgb(209, 203, 203);
+  width: 100%;
+  height: 2.2vmax;
+  padding-top: 0.7vmax;
+  color: gray;
 }
-.forgetCard>span>img{
-    color: #b7b4b1;
+.forgetCard > span > img {
+  color: #b7b4b1;
 }
-.forgetPageContainer>ul{
-    width: 100vw;
-    height: 6vh;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 2vmax;
-    font-size: 0.8vmax;
+.forgetPageContainer > ul {
+  width: 100vw;
+  height: 6vh;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 2vmax;
+  font-size: 0.8vmax;
 }
-.forgetPageContainer >p{
-    font-size: 0.8vmax;
-    color: #a1a1a0;
-   margin-left: 45vmax;
+.forgetPageContainer > p {
+  font-size: 0.8vmax;
+  color: #a1a1a0;
+  margin-left: 45vmax;
 }
 
 /* --------------------------------feed------------------------------- */
 
 /*  */
-.uploadDiv{
-    position: absolute;
-    right: -40%;
-    top: 25%;
-    z-index: 10000;
-    width: 25%;
-    height: 50%;
-    border-radius: 50px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s linear;
-    background-color: white;
+.uploadDiv {
+  position: absolute;
+  right: -40%;
+  top: 25%;
+  z-index: 10000;
+  width: 25%;
+  height: 50%;
+  border-radius: 50px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s linear;
+  background-color: white;
 }
-.uploadDiv >span{
-    width: 100%;
-    height: 16%;
-    text-align: center;
-    padding-top: 2vmax;
-    border-bottom: 1px solid rgb(199, 197, 197);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:  1vmax 2vmax 0 2vmax;
+.uploadDiv > span {
+  width: 100%;
+  height: 16%;
+  text-align: center;
+  padding-top: 2vmax;
+  border-bottom: 1px solid rgb(199, 197, 197);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vmax 2vmax 0 2vmax;
 }
-.uploadDiv form{
-    width: 100%;
-    height: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.uploadDiv form {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.uploadDiv >form>input{
-   width: 60%;
+.uploadDiv > form > input {
+  width: 60%;
 }
-.uploadDiv form>button{
-    background-color: #c6f8f7;
-    border: 0;
-    padding: 0.4vmax 6.5vmax;
-    margin-top: 1vmax;
-    border-radius: 8px;
+.uploadDiv form > button {
+  background-color: #c6f8f7;
+  border: 0;
+  padding: 0.4vmax 6.5vmax;
+  margin-top: 1vmax;
+  border-radius: 8px;
 }
-.createPost>i{
-   
-    font-size: 1.3vmax;
-    font-weight: 100;
-
+.createPost > i {
+  font-size: 1.3vmax;
+  font-weight: 100;
 }
-.createPost{
-    font-size: 1vmax;
-    margin-left: 1.6vmax;
+.createPost {
+  font-size: 1vmax;
+  margin-left: 1.6vmax;
 }
 
 /* ------------------------ feed ----------------------- */
 
-.feedBox{
-    width: 100vw;
-    display: flex;
+.feedBox {
+  width: 100vw;
+  display: flex;
 }
-.feedSideBar{
-     width: 16.5vmax;
-    height: 40.5vmax; 
-    position: fixed; 
-    left: 0;
-    top: 12%;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-    /* box-shadow: 30px 30px 24px rgba(0,0,0, 0.025); */
-    
+.feedSideBar {
+  width: 16.5vmax;
+  height: 40.5vmax;
+  position: fixed;
+  left: 0;
+  top: 12%;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  /* box-shadow: 30px 30px 24px rgba(0,0,0, 0.025); */
 }
-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: white;
-}
-
-.feedSideBar >div{
-    width: 100%;
-    height: 29vh;
-}
-.feedSideBar >div>a>img{
-    width: 1.8vmax;
-}
-.feedSideBar >div>a>i{
-    font-size: 1.5vmax;
-    font-weight: 100;
-}
-.feedSideBar >div>a{
-    text-decoration: none;
-    color: black;
-    font-size: 1vmax;
-}
-.feedBox-content{
-    width: 100%;
-    display: flex;
-
-}
-.feedBox-content-left{
-    width: 80vmax;
-    /* height: 100%; */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    /* padding-top: 5vmax; */
-    margin-top: 5vmax;
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
 }
 
-.feedBox-content-right{
-    width: 40vmax;
-    /* height: 80vmax; */
+.feedSideBar > div {
+  width: 100%;
+  height: 29vh;
 }
-.uploadDiv{
-    position: absolute;
-    top: 50%;
-    right: -30%;
-    width: 27vmax;
-    height: 22vmax;
-    border-radius: 50px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+.feedSideBar > div > a > img {
+  width: 1.8vmax;
 }
-.postBox{
-    width: 50%;
-    height: 40vmax;
-    margin-top: 1.5vmax;
-    border-radius: 40px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    margin-right: 1vmax;
-    overflow: hidden;
-    border-top: 1px solid rgb(222, 222, 222);
+.feedSideBar > div > a > i {
+  font-size: 1.5vmax;
+  font-weight: 100;
 }
-.post-top{
-    width: 100%;
-    height: 10%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    padding-left: 1vmax;
+.feedSideBar > div > a {
+  text-decoration: none;
+  color: black;
+  font-size: 1vmax;
 }
-.post-top>span{
-    margin-top: 0.5vmax;
-    width: 10vmax;
-    padding-left: 1vmax;
+.feedBox-content {
+  width: 100%;
+  display: flex;
 }
-.post-top>span>h6>span
-{
-    font-weight: 400;
+.feedBox-content-left {
+  width: 80vmax;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* padding-top: 5vmax; */
+  margin-top: 5vmax;
 }
-.post-top>img{
-    width: 2.6vmax;
-    height: 2.6vmax;
-    border-radius: 50%;
-    object-fit: cover;
-   
+
+.feedBox-content-right {
+  width: 40vmax;
+  /* height: 80vmax; */
 }
-.post-imgBox{
-    width: 100%;
-    height: 65%;
+.uploadDiv {
+  position: absolute;
+  top: 50%;
+  right: -30%;
+  width: 27vmax;
+  height: 22vmax;
+  border-radius: 50px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
 }
-.post-imgBox>img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+.postBox {
+  width: 50%;
+  height: 40vmax;
+  margin-top: 1.5vmax;
+  border-radius: 40px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  margin-right: 1vmax;
+  overflow: hidden;
+  border-top: 1px solid rgb(222, 222, 222);
 }
-.postBox>span{
-    /* display: inline-block; */
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 6%;
-    display: flex;
-    align-items: center;
-    padding-left: 1vmax;
-    gap: 0.5vmax;
-    padding-top: 0.3vmax;
+.post-top {
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding-left: 1vmax;
 }
-.postBox>span>p{
-    margin-top: 0.8vmax;
+.post-top > span {
+  margin-top: 0.5vmax;
+  width: 10vmax;
+  padding-left: 1vmax;
 }
-.postBox>span>i{
-    font-size: 1.7vmax;
-    font-weight: 100;
+.post-top > span > h6 > span {
+  font-weight: 400;
 }
-.postBox>p{
-    padding:0.6vmax 1.5vmax;
+.post-top > img {
+  width: 2.6vmax;
+  height: 2.6vmax;
+  border-radius: 50%;
+  object-fit: cover;
 }
-.postBox>form{
-    display: flex;
+.post-imgBox {
+  width: 100%;
+  height: 65%;
 }
-.postBox>form>textarea{
-    width: 80%;
-    margin-left: 1vmax;
-    border: 0;
-    resize: none;
+.post-imgBox > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-.postBox>form>button{
-    border: 0;
-    border-radius: 50px;
-    width: 4vmax;
-    height: 2vmax;
-    margin-left: 0.5vmax;
+.postBox > span {
+  /* display: inline-block; */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 6%;
+  display: flex;
+  align-items: center;
+  padding-left: 1vmax;
+  gap: 0.5vmax;
+  padding-top: 0.3vmax;
+}
+.postBox > span > p {
+  margin-top: 0.8vmax;
+}
+.postBox > span > i {
+  font-size: 1.7vmax;
+  font-weight: 100;
+}
+.postBox > p {
+  padding: 0.6vmax 1.5vmax;
+}
+.postBox > form {
+  display: flex;
+}
+.postBox > form > textarea {
+  width: 80%;
+  margin-left: 1vmax;
+  border: 0;
+  resize: none;
+}
+.postBox > form > button {
+  border: 0;
+  border-radius: 50px;
+  width: 4vmax;
+  height: 2vmax;
+  margin-left: 0.5vmax;
 }
 
 /* ----------------------- user info card ------------------------------------ */
 
-.userInfoDiv{
-    width: 25%;
-    height: 30%;
-    margin-top: 6.5vmax;
-    margin-left: 2vmax;
-    border-radius: 50px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    display: flex;
-    overflow: hidden;
-
+.userInfoDiv {
+  width: 25%;
+  height: 30%;
+  margin-top: 6.5vmax;
+  margin-left: 2vmax;
+  border-radius: 50px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  display: flex;
+  overflow: hidden;
 }
-.userInfoDiv-left{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    margin-top: 1.5vmax;
-    margin-left: 1vmax;
-    display: flex;
+.userInfoDiv-left {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 1.5vmax;
+  margin-left: 1vmax;
+  display: flex;
 }
-.userInfoDiv-left>img{
-    width: 4vmax;
-    height: 4vmax;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-    border: 1px solid #4EDCD8;
-    padding: 0.1vmax;
+.userInfoDiv-left > img {
+  width: 4vmax;
+  height: 4vmax;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 1px solid #4edcd8;
+  padding: 0.1vmax;
 }
-.userInfoDiv-right{
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    margin-top: 2vmax;
-    margin-left: 0.1vmax;
-    padding-left: 0.7vmax;
+.userInfoDiv-right {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: 2vmax;
+  margin-left: 0.1vmax;
+  padding-left: 0.7vmax;
 }
-.userInfoDiv-right>div>span>h6{
-    color: gray;
-    font-weight: 400;
-    font-size: 0.9vmax;
+.userInfoDiv-right > div > span > h6 {
+  color: gray;
+  font-weight: 400;
+  font-size: 0.9vmax;
 }
-.userInfoDiv-right>div>span>h5{
-    margin-top: -0.2vmax;
-    font-weight: 500;
-    font-size: 1.05vmax;
+.userInfoDiv-right > div > span > h5 {
+  margin-top: -0.2vmax;
+  font-weight: 500;
+  font-size: 1.05vmax;
 }
-.userInfoDiv-right>div>span{
-    text-align: center;
+.userInfoDiv-right > div > span {
+  text-align: center;
 }
-.postNumber{
-    margin-right: 7vmax;
+.postNumber {
+  margin-right: 7vmax;
 }
-.userInfoDiv-right-top{
-    height: 30%;
+.userInfoDiv-right-top {
+  height: 30%;
 }
-.userInfoDiv-right-bottom{
-    /* background-color: yellow; */
-    height: 60%;
-    padding: 0 0.2vmax;
+.userInfoDiv-right-bottom {
+  /* background-color: yellow; */
+  height: 60%;
+  padding: 0 0.2vmax;
 }
-.userInfoDiv-right-bottom>p{
-    width: 100%;
-    font-weight: 400;
-    
+.userInfoDiv-right-bottom > p {
+  width: 100%;
+  font-weight: 400;
 }
-.userInfoDiv-right-bottom>button{
-    width: 8vmax;
-    height: 2vmax;
-    border-radius: 10px;
-    border: 0;
-   
-    
+.userInfoDiv-right-bottom > button {
+  width: 8vmax;
+  height: 2vmax;
+  border-radius: 10px;
+  border: 0;
 }
-.userInfoDiv-right-bottom>button>a{
-   text-decoration: none;
-   color: black;
-
+.userInfoDiv-right-bottom > button > a {
+  text-decoration: none;
+  color: black;
 }
 
 /* -------------------profile------------------------ */
 
-.profileContainer{
-    width: 100vw;
-   
+.profileContainer {
+  width: 100vw;
 }
-.userProfile{
-    width: 33%;
-    min-height: 35vmax;
-    border-radius: 50px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    margin-left: 18vmax;
-    margin-top: 7vmax;
-    padding-top: 2vmax;
-    position: fixed;
-
+.userProfile {
+  width: 33%;
+  min-height: 35vmax;
+  border-radius: 50px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  margin-left: 18vmax;
+  margin-top: 7vmax;
+  padding-top: 2vmax;
+  position: fixed;
 }
-.userProfile-top{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.userProfile-top {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.userProfile-top>img{
-    width: 11vmax;
-    height: 11vmax;
-    border: 1px solid gray;
-    padding: 0.2vmax;
-    border-radius:50%;
-    object-fit: cover;
+.userProfile-top > img {
+  width: 11vmax;
+  height: 11vmax;
+  border: 1px solid gray;
+  padding: 0.2vmax;
+  border-radius: 50%;
+  object-fit: cover;
 }
-.userProfile-bottom{
-     width: 100%;
-    height: 60%;
-    padding-top: 2vmax;
-    /* background-color: blue; */
+.userProfile-bottom {
+  width: 100%;
+  height: 60%;
+  padding-top: 2vmax;
+  /* background-color: blue; */
 }
-.userProfileSameProperty-Div{
-    width: 100%;
-    height: 10%;
-    /* background-color: red; */
-    display: flex;
-    justify-content: space-between;
-    padding: 0 3vmax;
-    margin-top: 0.5%;
+.userProfileSameProperty-Div {
+  width: 100%;
+  height: 10%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3vmax;
+  margin-top: 0.5%;
 }
-.userProfile-bottom>div>button{
-    width: 7.5vmax;
-    height: 2.3vmax;
-    border: 0;
-    border-radius: 10px;
+.userProfile-bottom > div > button {
+  width: 7.5vmax;
+  height: 2.3vmax;
+  border: 0;
+  border-radius: 10px;
 }
-.bio-Profile-Div{
-    width: 100%;
-    /* height: 30%; */
-    /* background-color: green; */
-    padding: 1vmax 3vmax;
-    margin-top: 1vmax;
+.bio-Profile-Div {
+  width: 100%;
+  /* height: 30%; */
+  /* background-color: green; */
+  padding: 1vmax 3vmax;
+  margin-top: 1vmax;
 }
-.AllPosts{
-   width: 48vmax;
-   height: 50vmax;
-   /* background-color: blue; */
-   margin-left: 51vmax;
-   padding-top: 8vmax;
+.AllPosts {
+  width: 48vmax;
+  height: 50vmax;
+  /* background-color: blue; */
+  margin-left: 51vmax;
+  padding-top: 8vmax;
 }
-.AllPosts>h3{
-    text-align: center;
+.AllPosts > h3 {
+  text-align: center;
 }
-.AllPosts>div{
-    width: 30%;
-    height: 30%;
-    display: inline-block;
-    margin-left: 1.1vmax;
-    margin-top: 1vmax;
-    border-radius: 20px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+.AllPosts > a > div {
+  width: 30%;
+  height: 30%;
+  display: inline-block;
+  margin-left: 1.1vmax;
+  margin-top: 1vmax;
+  border-radius: 20px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
 }
-.AllPosts>div>img{
-    border-radius: 20px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+.AllPosts > a > div > img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* --------- edit profile ---------- */
 
-.Edit-Profile-Box{
-    width: 60%;
-    height: 70vh;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    margin: auto;
-    margin-top: 8vmax;
-    display: flex;
-    flex-direction: column;
-    padding: 2vmax;
-    gap: 2vmax;
-
+.Edit-Profile-Box {
+  width: 60%;
+  height: 70vh;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 8vmax;
+  display: flex;
+  flex-direction: column;
+  padding: 2vmax;
+  gap: 2vmax;
 }
-.Edit-Profile-Box>div>img{
-    width: 2.8vmax;
-    border-radius: 50%;
+.Edit-Profile-Box > div > img {
+  width: 2.8vmax;
+  border-radius: 50%;
 }
-.Edit-Profile-Box>div{
-    padding: 1vmax;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Edit-Profile-Box > div {
+  padding: 1vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.Edit-Profile-Box>div>p{
-    font-size: 1.1vmax;
-    margin-left: 2vmax;
+.Edit-Profile-Box > div > p {
+  font-size: 1.1vmax;
+  margin-left: 2vmax;
 }
-.Edit-Profile-Box>form:nth-child(3){
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    gap: 2vmax;
+.Edit-Profile-Box > form:nth-child(3) {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 2vmax;
 }
-.Edit-Profile-Box>form:nth-child(3)>input{
-    width: 40%;
-    background-color: rgb(227, 227, 227);
-
+.Edit-Profile-Box > form:nth-child(3) > input {
+  width: 40%;
+  background-color: rgb(227, 227, 227);
 }
-.Edit-Profile-Box>form:nth-child(3)>button{
-   width: 5vmax;
-   height: 2vmax;
-   border: 0;
-   border-radius: 10px;
-   margin-left: -6vmax;
-}
-.Edit-Profile-Box>form:nth-child(4){
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    gap: 2vmax;
-}
-.Edit-Profile-Box>form:nth-child(4)>input{
-    width: 40%;
-    background-color: rgb(227, 227, 227);
-
-}
-.Edit-Profile-Box>form:nth-child(4)>button{
-   width: 5vmax;
-   height: 2vmax;
-   border: 0;
-   border-radius: 10px;
+.Edit-Profile-Box > form:nth-child(3) > button {
+  width: 5vmax;
+  height: 2vmax;
+  border: 0;
+  border-radius: 10px;
   margin-left: -6vmax;
 }
-.Edit-Profile-Box>form:nth-child(4)>textarea{
-    resize: none;
-    width: 40%;
-    height: 3.5vmax;
-
-
+.Edit-Profile-Box > form:nth-child(4) {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  gap: 2vmax;
 }
-.edit-Head{
-    font-weight: 400;
+.Edit-Profile-Box > form:nth-child(4) > input {
+  width: 40%;
+  background-color: rgb(227, 227, 227);
 }
-
+.Edit-Profile-Box > form:nth-child(4) > button {
+  width: 5vmax;
+  height: 2vmax;
+  border: 0;
+  border-radius: 10px;
+  margin-left: -6vmax;
+}
+.Edit-Profile-Box > form:nth-child(4) > textarea {
+  resize: none;
+  width: 40%;
+  height: 3.5vmax;
+}
+.edit-Head {
+  font-weight: 400;
+}
 
 /* ----------------------- */
-.ProfileIcon{
-    border: 1px solid gray;
-    background-color: transparent;
-    border-radius: 50px;
-    padding: 0.1vmax;
-    margin-left: -1vmax;
-    
+.ProfileIcon {
+  border: 1px solid gray;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 0.1vmax;
+  margin-left: -1vmax;
 }
-.ProfileIcon>a>img{
-    border-radius: 50px;
-    width: 2.5vmax;
-    height: 2.5vmax;
-    border: 0;
+.ProfileIcon > a > img {
+  border-radius: 50px;
+  width: 2.5vmax;
+  height: 2.5vmax;
+  border: 0;
 }
 
 /* ---------------- Post View ------------------ */
 
-.PostViewWindow{
-     width: 60%;
-    height: 38vmax;
-   border-radius: 50px;
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
-    margin-left: 25vmax;
-    margin-top: 6vmax;
-    position: fixed;
-    display: flex;
-    background-color: white;
-    transition: all ease 0.2s;
+.PostViewWindow {
+  width: 60%;
+  height: 38vmax;
+  border-radius: 50px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  margin-left: 25vmax;
+  margin-top: 6vmax;
+  position: fixed;
+  display: flex;
+  background-color: white;
+  transition: all ease 0.2s;
 }
-.PostViewWindow-img{
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
-    width: 50%;
-    height: 100%;
-    background-color: red;
-    
+.PostViewWindow-img {
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+  width: 50%;
+  height: 100%;
 }
-.PostViewWindow-img>img{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-     border-bottom-left-radius: 50px;
-     border-top-left-radius: 50px;
-    }
-    .PostViewWindow-content{
-    border: 0.1px solid rgb(219, 219, 219);
-    width: 50%;
-    height: 100%;
-   border-top-right-radius: 50px;
-   border-bottom-right-radius: 50px;
-
-
+.PostViewWindow-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
 }
-.PostViewWindow-content-top{
-    border-top-right-radius: 50px;
-    width: 100%;
-    height: 10%;
-    border-bottom: 0.1px solid rgb(219, 219, 219);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.PostViewWindow-content {
+  border: 0.1px solid rgb(219, 219, 219);
+  width: 50%;
+  height: 100%;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
-.PostViewWindow-content-top>i{
-    margin-right: 2vmax;
-    font-size: 1.4vmax;
+.PostViewWindow-content-top {
+  border-top-right-radius: 50px;
+  width: 100%;
+  height: 10%;
+  border-bottom: 0.1px solid rgb(219, 219, 219);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.PostViewWindow-content-top>div{
-    display: flex;
-    align-items: center;
-    width: 50%;
-    gap: 0.8vmax;
-    height: 100%;
-    padding-left: 1vmax;
+.PostViewWindow-content-top > i {
+  margin-right: 2vmax;
+  font-size: 1.4vmax;
+}
+.PostViewWindow-content-top > div {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  gap: 0.8vmax;
+  height: 100%;
+  padding-left: 1vmax;
 }
 
-.PostViewWindow-content-center{
+.PostViewWindow-content-center {
+  width: 100%;
+  height: 80%;
+}
+.PostViewWindow-content-bottom {
+  border-bottom-right-radius: 50px;
+  width: 100%;
+  height: 10%;
+  border-top: 0.1px solid rgb(219, 219, 219);
+}
+.PostViewWindow-content-top > div > img {
+  width: 2.6vmax;
+  height: 2.6vmax;
+  padding: 0.1vmax;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+.PostViewWindow-content-top > div > p {
+  margin-top: 0.7vmax;
+  font-weight: 500;
+}
+.PostViewWindow-content-bottom > form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.PostViewWindow-content-bottom > form > button {
+  width: 4vmax;
+  text-align: center;
+  border: 0;
+  color: gray;
+  /* background-color: ; */
+  padding: 0.2vmax 0.5vmax;
+  font-weight: 600;
+}
+.PostViewWindow-content-bottom > form > textarea {
+  width: 80%;
+  resize: none;
+  border: 0;
+}
+.PostViewWindow-content-center>ul>li{
     width: 100%;
-    height: 80%;
+    padding: 1vmax;
 }
-.PostViewWindow-content-bottom{
-    border-bottom-right-radius: 50px;
-    width: 100%;
-    height: 10%;
-    border-top: 0.1px solid rgb(219, 219, 219);
+.PostViewWindow-content-center>ul>li>img{
+   width: 2.6vmax;
+   height: 2.6vmax;
+   border-radius: 50%;
+   padding: 0.1vmax;
+   border: 1px solid gray;
 }
-.PostViewWindow-content-top>div>img{
-    width: 2.6vmax;
-    height: 2.6vmax;
-    padding: 0.1vmax;
-    border-radius: 50%;
-    border: 1px solid gray;
+.postOptionDiv {
+  width: 25vmax;
+  height: 15.5vmax;
+  border: 1px solid gray;
+  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  background-color: white;
+  text-align: center;
+  display: none;
 }
-.PostViewWindow-content-top>div>p{
-    margin-top: 0.7vmax;
-    font-weight: 500;
-}
-.PostViewWindow-content-bottom>form{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-.PostViewWindow-content-bottom>form>button{
-    width: 4vmax;
-    text-align: center;
-    border: 0;
-    color: gray;
-    /* background-color: ; */
-    padding: 0.2vmax 0.5vmax;
-    font-weight: 600;
-}
-.PostViewWindow-content-bottom>form>textarea{
-    width: 80%;
-    resize: none;
-    border: 0;
-}
-.postOptionDiv{
-    width: 25vmax;
-    height: 15.5vmax;
-    border: 1px solid gray;
-    border-radius: 15px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 10000;
-    background-color: white;
-    text-align: center;
-    display: none;
-}
-.postOptionDiv>h6{
-    width: 100%;
-    height: 3.5vmax;
-   padding-top: 0.8vmax;
-   color: gray;
-   font-weight: 500;
-   border-bottom: 1px solid rgb(189, 189, 189);
-   border-radius: 15px;
+.postOptionDiv > h6 {
+  width: 100%;
+  height: 3.5vmax;
+  padding-top: 0.8vmax;
+  color: gray;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(189, 189, 189);
+  border-radius: 15px;
 }

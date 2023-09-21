@@ -37,7 +37,7 @@
   </div>
   <div class="postOptionDiv">
    <h6>Options</h5>
-   <h6 class="text-danger">Delete</h5>
+   <h6 class="text-danger"><a class="text-danger text-decoration-none" href="/deletePost/<%= id %>">Delete</a></h5>
    <h6 class="text-dark">See Profile</h5>
    <h6 class="text-dark postOptionDiv-cancel-btn">Cancel</h5>
   </div>
@@ -60,17 +60,21 @@
   </div>
   <div class="PostViewWindow">
     <div class="PostViewWindow-img">
-      <img src="/images/posts/media-1695198923615.jpg" alt="" />
+      <img src="/images/posts/<%= post.media %>" alt="" />
     </div>
     <div class="PostViewWindow-content">
       <div class="PostViewWindow-content-top">
         <div>
-          <img src="/images/posts/media-1695198923615.jpg" alt="" />
-          <p>chakravartiii</p>
+          <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
+          <p><%= post.user.username %></p>
         </div>
         <i class="moreOptionPost ri-more-fill"></i>
       </div>
-      <div class="PostViewWindow-content-center"></div>
+      <div class="PostViewWindow-content-center">
+        <ul class="list-unstyled">
+          <li><img src="/images/userImages/<%= post.user.avatar %>" alt="" /> <strong> &nbsp;&nbsp;<%= post.user.username %></strong>&nbsp; <%= post.caption %></li>
+        </ul>
+      </div>
       <div class="PostViewWindow-content-bottom">
         <form>
       <textarea  class="form-control" rows="1" placeholder="Add a comment..."></textarea><button>Post</button>

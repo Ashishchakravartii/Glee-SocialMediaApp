@@ -36,50 +36,59 @@
     </div>
   </div>
   <div class="uploadDiv">
-      <span
-        ><p>Upload Picture</p>
-        <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
-      ></span>
-       <form action="/savePost" method="post" enctype="multipart/form-data">
-        <i class="ri-upload-cloud-fill fs-1"></i>
-        <input class="form-control" type="file" name="media">
-        <input class="form-control mt-3" type="text" name="caption" placeholder="Caption">
-        <button class="">Upload</button>
-      </form>
-    </div>
+    <span
+      ><p>Upload Picture</p>
+      <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
+    ></span>
+    <form action="/savePost" method="post" enctype="multipart/form-data">
+      <i class="ri-upload-cloud-fill fs-1"></i>
+      <input class="form-control" type="file" name="media" />
+      <input
+        class="form-control mt-3"
+        type="text"
+        name="caption"
+        placeholder="Caption"
+      />
+      <button class="">Upload</button>
+    </form>
+  </div>
   <div class="userProfile">
     <div class="userProfile-top">
-      <img
-        src="/images/userImages/<%= user.avatar %>"
-      />
+      <img src="/images/userImages/<%= user.avatar %>" />
     </div>
     <div class="userProfile-bottom">
       <div class="userProfileSameProperty-Div">
         <h3><%=user.username%></h3>
-        <button><a class="text-decoration-none text-dark" href="/editProfile">Edit Profile</a></button>
+        <button>
+          <a class="text-decoration-none text-dark" href="/editProfile"
+            >Edit Profile</a
+          >
+        </button>
       </div>
       <div class="userProfileSameProperty-Div">
         <h6 class="text-secondary"><%=user.username%></h6>
       </div>
       <div class="userProfileSameProperty-Div">
-        <h6>&bull;<span class="text-info-emphasis"><%= posts.length %></span> Posts</h6>
+        <h6>
+          &bull;<span class="text-info-emphasis"><%= posts.length %></span>
+          Posts
+        </h6>
         <h6>&bull;<span class="text-info-emphasis">2.2k</span> Likes</h6>
         <h6>&bull;<span class="text-info-emphasis">1.4k</span> Comments</h6>
       </div>
       <div class="bio-Profile-Div">
-        <p>
-          <%=user.bio%>
-         
-        </p>
+        <p><%=user.bio%></p>
       </div>
     </div>
   </div>
   <div class="AllPosts">
     <h3><i class="text-info ri-grid-fill"></i> Your Posts</h3>
     <% posts.forEach((post) => { %>
-    <div>
-      <img src="/images/posts/<%= post.media %>" alt="">
-    </div>
+    <a href="/postView/<%=post._id  %>">
+      <div>
+        <img src="/images/posts/<%= post.media %>" alt="" /></div
+    ></a>
+
     <%})%>
   </div>
 

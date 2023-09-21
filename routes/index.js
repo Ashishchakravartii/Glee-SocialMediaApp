@@ -67,7 +67,7 @@ router.get("/home", isLoggedIn, async (req, res) => {
      .then((posts) => {
        // Handle successful query results here
      
-       res.render("homepage", { user: req.user, allPost: posts });
+       res.render("homepage", { user: req.user, allPost:posts });
        
      })
      .catch((err) => {
@@ -198,8 +198,53 @@ router.post("/saveBio",async(req,res,next)=>{
 });
 // --------------- PostView -------------------
 
-router.get("/postView",isLoggedIn,(req,res,next)=>{
-res.render("PostView");
+router.get("/postView/:id",isLoggedIn,async(req,res,next)=>{
+  try {
+    // const post= await PostModel.findById(req.params.id);
+
+       PostModel.findById(req.params.id)
+       .populate("user", ["username", "avatar"])
+       .then((posts) => {
+    //      // Handle successful query results here
+         res.render("PostView", { user: req.user, post: posts, id:req.params.id });
+       })
+       .catch((err) => {
+         // Handle errors here
+         console.error("Error fetching posts:", err);
+       });
+    
+  // res.render("PostView",{post});
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// ------- delete post -------------------
+
+router.get("/deletePost/:id",async(req,res,next)=>{
+  try {
+     const postId = req.params.id;
+
+     // Find the post to get the user's ID who created it
+     const post = await PostModel.findById(postId);
+     if (!post) {
+       return res.status(404).send("Post not found");
+     }
+
+     // Delete the post
+     await PostModel.findByIdAndDelete(postId);
+
+     // Remove the reference to the post from the user's posts array
+     const user = await UserModel.findById(post.user);
+     if (user) {
+       user.posts.pull(postId);
+       await user.save();
+     }
+
+    res.redirect("/profile")
+  } catch (error) {
+    console.log(error);
+  }
 });
 // -------------- posts ------------------
 
