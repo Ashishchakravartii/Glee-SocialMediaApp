@@ -35,36 +35,49 @@
       </div>
     </div>
   </div>
+  <div class="postOptionDiv">
+   <h6>Options</h5>
+   <h6 class="text-danger">Delete</h5>
+   <h6 class="text-dark">See Profile</h5>
+   <h6 class="text-dark postOptionDiv-cancel-btn">Cancel</h5>
+  </div>
   <div class="uploadDiv">
     <span
       ><p>Upload Picture</p>
       <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
     ></span>
-    <form>
+    <form action="/savePost" method="post" enctype="multipart/form-data">
       <i class="ri-upload-cloud-fill fs-1"></i>
-      <input class="form-control mt-3" type="file" />
+      <input class="form-control" type="file" name="media" />
+      <input
+        class="form-control mt-3"
+        type="text"
+        name="caption"
+        placeholder="Caption"
+      />
       <button class="">Upload</button>
     </form>
   </div>
-  <div class="Edit-Profile-Box">
-    <h3 class="edit-Head">Edit Profile</h3>
-    <div class="">
-      <img src="/images/userImages/<%= user.avatar%>" alt="" />
-      <p><%= user.username%></p>
+  <div class="PostViewWindow">
+    <div class="PostViewWindow-img">
+      <img src="/images/posts/media-1695198923615.jpg" alt="" />
     </div>
-    <form action="/avatar" method="post" enctype="multipart/form-data">
-      <h5>Update Profile Picture</h5>
-      <input required class="form-control" type="file" name="avatar" />
-      <button class="">Upload</button>
+    <div class="PostViewWindow-content">
+      <div class="PostViewWindow-content-top">
+        <div>
+          <img src="/images/posts/media-1695198923615.jpg" alt="" />
+          <p>chakravartiii</p>
+        </div>
+        <i class="moreOptionPost ri-more-fill"></i>
+      </div>
+      <div class="PostViewWindow-content-center"></div>
+      <div class="PostViewWindow-content-bottom">
+        <form>
+      <textarea  class="form-control" rows="1" placeholder="Add a comment..."></textarea><button>Post</button>
     </form>
-    <form action="/saveBio" method="post">
-      <h5>Bio</h5>
-      <textarea class="form-control" name="bio" placeholder="Edit Bio"><%=user.bio%></textarea>
-      <button>Submit</button>
-    </form>
+      </div>
+    </div>
   </div>
 
-  <div></div>
+  <%- include("./partials/footer") %>
 </div>
-
-<%- include("./partials/footer") %>

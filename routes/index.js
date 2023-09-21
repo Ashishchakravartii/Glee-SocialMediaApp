@@ -183,6 +183,24 @@ router.post(
     }
   }
 );
+// ------------- /saveBio -----------------------
+
+router.post("/saveBio",async(req,res,next)=>{
+  try {
+    // const user= await UserModel.findById(req.user._id);
+     req.user.bio = req.body.bio;
+     await req.user.save();
+    res.redirect("/profile")
+
+  } catch (error) {
+    console.log(error);
+  }
+});
+// --------------- PostView -------------------
+
+router.get("/postView",isLoggedIn,(req,res,next)=>{
+res.render("PostView");
+});
 // -------------- posts ------------------
 
 router.post(

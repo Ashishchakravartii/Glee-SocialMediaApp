@@ -1,5 +1,5 @@
-const mongoose= require("mongoose")
-const plm= require("passport-local-mongoose")
+const mongoose = require("mongoose");
+const plm = require("passport-local-mongoose");
 
 const UserModel = mongoose.Schema({
   username: {
@@ -25,9 +25,13 @@ const UserModel = mongoose.Schema({
     type: String,
     default: "default.png",
   },
-  posts:[{type:mongoose.Schema.Types.ObjectId,ref:"post"}],
+ bio: {
+    type: String,
+    default: "Heyyy! I'm using Glee.",
+  },
+  posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "post" }],
   bio: String,
 });
-UserModel.plugin(plm)
-const user= mongoose.model("User",UserModel);
-module.exports= user;
+UserModel.plugin(plm);
+const user = mongoose.model("User", UserModel);
+module.exports = user;
