@@ -9,10 +9,13 @@
     </div>
     <div>
       <span class="createPost"
-        ><i class="ri-gallery-upload-fill"></i>&nbsp; Upload</span>
+        ><i class="ri-gallery-upload-fill"></i>&nbsp; Upload</span
+      >
     </div>
     <div class="sideOptions-Div3">
-      <h6 class="ms-4 mt-2"><a class="text-decoration-none text-dark" href="/signout">Log Out</a></h6>
+      <h6 class="ms-4 mt-2">
+        <a class="text-decoration-none text-dark" href="/signout">Log Out</a>
+      </h6>
       <div class="">
         <i class="ms-4 mt-1 ri-google-play-line"></i
         ><i class="ms-2 mt-1 ri-apple-fill"></i>
@@ -40,48 +43,85 @@
       ></span>
       <form action="/savePost" method="post" enctype="multipart/form-data">
         <i class="ri-upload-cloud-fill fs-1"></i>
-        <input class="form-control" type="file" name="media">
-        <input class="form-control mt-3" type="text" name="caption" placeholder="Caption">
+        <input class="form-control" type="file" name="media" />
+        <input
+          class="form-control mt-3"
+          type="text"
+          name="caption"
+          placeholder="Caption"
+        />
         <button class="">Upload</button>
       </form>
     </div>
     <div class="feedBox-content-left">
-      <% if(allPost.length>0){ %>
-      <% allPost.forEach((post) => { %>
-  <div class="postBox">
-    <div class="post-top">
-      <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
-      <span>
-        <h6><a class="text-decoration-none text-dark" href="/feedProfile/<%= post.user._id %>"><%= post.user.username %></a><br /> <span class="text-secondary"><%= post.createdAt.toLocaleDateString() %></span></h6>
-      </span>
-    </div>
-    <div class="post-imgBox">
-      <img src="/images/posts/<%= post.media %>" alt="">
-    </div>
-    <span>
-      <i class="ri-heart-3-line"></i><p>5k</p><i class="ri-chat-3-line"></i><p>3421</p>
-    </span>
-    <p><span><strong><%= post.user.username %></strong></span> &nbsp; <%= post.caption %></p>
-    <form>
-      <textarea class="form-control" rows="1" placeholder="Add a comment..."></textarea><button>Post</button>
-    </form>
-  </div>
-<% }); %>
-<% }else{ %>
- <div class="postBox h-100 mt-5 w-50 ps-5">
-  <p class="m-5 text-secondary"><img class="ms-2" width="32" height="32" src="/images/icons8-cat-footprint-64 (1).png" alt="cat-footprint"/> &nbsp; &nbsp; &nbsp; Oops!!! There's no post</p>
-  <img class="ms-5" src="/images/catGif.gif" alt="">
- </div>
-  <% } %>
+      <% if(allPost.length>0){ %> <% allPost.forEach((post) => { %>
+      <div class="postBox">
+        <div class="post-top">
+          <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
+          <span>
+            <h6>
+              <a
+                class="text-decoration-none text-dark"
+                href="/feedProfile/<%= post.user._id %>"
+                ><%= post.user.username %></a
+              ><br />
+              <span class="text-secondary"
+                ><%= post.createdAt.toLocaleDateString() %></span
+              >
+            </h6>
+          </span>
+        </div>
+        <div class="post-imgBox">
+          <img src="/images/posts/<%= post.media %>" alt="" />
+        </div>
+       <!-- Inside a loop for each post -->
+  <span>
+    <a
+      class="likeTag text-decoration-none text-dark fs-2 mb-1"
+      href="/likePost/<%=post.id  %>"
+      onclick="toggleLike(this)">
+      <i class="ri-heart-3-line" id="likeIcon"></i>
+    </a>
+    <p><%= post.likes.length %></p>
+    <a class="text-decoration-none text-dark fs-3 mb-1" href="/postView/<%= post._id %>"><i class="ri-chat-3-line"></i></a>
+    <p><%= post.comments.length %></p>
+  </span>
+<!-- End of loop -->
 
 
-
-      
+        <p>
+          <span><strong><%= post.user.username %></strong></span> &nbsp; <%=
+          post.caption %>
+        </p>
+        <form action="/addComment/<%=post.id  %>" method="post">
+          <textarea
+            class="form-control"
+            rows="1"
+            placeholder="Add a comment..."
+            name="comment"></textarea
+          ><button>Post</button>
+        </form>
+      </div>
+      <% }); %> <% }else{ %>
+      <div class="postBox h-100 mt-5 w-50 ps-5">
+        <p class="m-5 text-secondary">
+          <img
+            class="ms-2"
+            width="32"
+            height="32"
+            src="/images/icons8-cat-footprint-64 (1).png"
+            alt="cat-footprint"
+          />
+          &nbsp; &nbsp; &nbsp; Oops!!! There's no post
+        </p>
+        <img class="ms-5" src="/images/catGif.gif" alt="" />
+      </div>
+      <% } %>
     </div>
     <div class="feedBox-content-right">
       <div class="userInfoDiv">
         <div class="userInfoDiv-left">
-          <img src="/images/userImages/<%=user.avatar%>" alt="">
+          <img src="/images/userImages/<%=user.avatar%>" alt="" />
         </div>
         <div class="userInfoDiv-right">
           <div class="userInfoDiv-right-top d-flex">
@@ -95,8 +135,8 @@
             </span>
           </div>
           <div class="userInfoDiv-right-bottom">
-           <p><%=user.bio%></p>
-           <button><a href="/profile">Profile</a></button>
+            <p><%=user.bio%></p>
+            <button><a href="/profile">Profile</a></button>
           </div>
         </div>
       </div>

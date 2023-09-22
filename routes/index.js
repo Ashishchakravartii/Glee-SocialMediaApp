@@ -172,12 +172,69 @@ try {
    if(otherUser.username === req.user.username){
     res.redirect("/profile")
    }
-   res.render("feedProfile", { otherUser,user:req.user, posts });
+   res.render("feedProfile", { otherUser, user: req.user, posts});
 
   
 } catch (error) {
   console.log(error);
 }
+});
+
+// ----------- Like post Route -----------------
+
+router.get("/likePost/:postId",isLoggedIn,async(req,res,next)=>{
+  try {
+    const postId= req.params.postId;
+
+    const post = await PostModel.findById(postId);
+
+     if (!post) {
+      return res.status(404).send("Post not found");
+    }
+    
+    const userIndex= post.likes.indexOf(req.user._id);
+    if(userIndex !== -1){
+      post.likes.splice(userIndex,1);
+    }else{
+      post.likes.push(req.user._id);
+    }
+
+     await post.save();
+     res.redirect("/home")
+
+  } catch (error) {
+    console.log(error);
+  }
+
+});
+
+// -------------- comment adding route ---------------
+
+router.post("/addComment/:postId", isLoggedIn, async (req, res, next) => {
+  try {
+    const postId = req.params.postId;
+    const { comment } = req.body;
+
+    // Find the post by ID
+    const post = await PostModel.findById(postId);
+    if (!post) {
+      return res.status(404).send("Post not found");
+    }
+
+    // Create a new comment object
+    const newComment = {
+      user: req.user._id,
+      comment,
+    };
+
+    // Add the new comment to the comments array and save the post
+    post.comments.push(newComment);
+    await post.save();
+
+    res.redirect("/postView/" + postId);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 

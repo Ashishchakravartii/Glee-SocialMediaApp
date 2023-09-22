@@ -37,7 +37,7 @@
   </div>
   <div class="postOptionDiv">
    <h6>Options</h6>
-    <h6 class="text-dark">See Profile</h5>
+    <h6 class="text-dark"><a class="text-decoration-none text-dark" href="/feedProfile/<%= post.user._id %>">See Profile</a></h5>
       <% if (post.user.username  === user.username) { %>
         <h6 class="text-danger"><a class="text-danger text-decoration-none" href="/deletePost/<%= id %>">Delete</a></h5>
     <% } %>
@@ -76,11 +76,14 @@
       <div class="PostViewWindow-content-center">
         <ul class="list-unstyled">
           <li><img src="/images/userImages/<%= post.user.avatar %>" alt="" /> <strong> &nbsp;&nbsp;<%= post.user.username %></strong>&nbsp; <%= post.caption %></li>
+          <% post.comments.forEach(comment=>{ %>
+            <li><%= comment.comment %></li>
+         <% }) %>
         </ul>
       </div>
       <div class="PostViewWindow-content-bottom">
-        <form>
-      <textarea class="" rows="1" placeholder="Add a comment..."></textarea><button>Post</button>
+        <form action="/addComment/<%=post.id  %>" method="post">
+      <textarea name="comment" class="" rows="1" placeholder="Add a comment..."></textarea><button>Post</button>
     </form>
       </div>
     </div>
