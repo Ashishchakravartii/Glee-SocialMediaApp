@@ -34,8 +34,8 @@ router.get("/signup", (req, res, next) => {
 });
 router.post("/signup", async (req, res, next) => {
   try {
-    const { username, email, password } = req.body;
-    await UserModel.register({ username, email }, password);
+    const { name,username, email, password } = req.body;
+    await UserModel.register({ name,username, email }, password);
     res.redirect("/signin");
   } catch (error) {
     res.send(error.message);
@@ -264,6 +264,7 @@ router.post("/saveBio",async(req,res,next)=>{
   try {
     // const user= await UserModel.findById(req.user._id);
      req.user.bio = req.body.bio;
+     req.user.username = req.body.username;
      await req.user.save();
     res.redirect("/profile")
 

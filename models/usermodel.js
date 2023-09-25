@@ -2,6 +2,12 @@ const mongoose = require("mongoose");
 const plm = require("passport-local-mongoose");
 
 const UserModel = mongoose.Schema({
+  name: {
+    type: String,
+    trim: true,
+    required: [true, "Username field must not empty"],
+    minLength: [4, "Username field must have atleast 4 characters"],
+  },
   username: {
     type: String,
     trim: true,

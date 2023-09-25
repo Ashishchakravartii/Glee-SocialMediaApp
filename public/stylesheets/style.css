@@ -374,7 +374,7 @@ nav span {
 
 .SignInContainer {
   width: 55vw;
-  height: 95%;
+  height: 99%;
   margin: auto;
   margin-top: 2vmax;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
@@ -383,6 +383,7 @@ nav span {
   background-size: 30%;
   background-position: center;
   scale: 0.95;
+  padding: 0.5vmax 0;
 }
 .signInBoxTop {
   width: 100%;
@@ -395,12 +396,12 @@ nav span {
 }
 .signInBoxContentDiv {
   width: 100%;
-  height: 35%;
+  height: 27%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5vmax;
+  margin-top: 2vmax;
 }
 .signInBoxContentDiv > span {
   display: flex;
@@ -415,17 +416,17 @@ nav span {
 }
 .SignInContainer form {
   width: 100%;
-  height: 40%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-content: space-around;
   align-items: center;
-  margin-top: 1vmax;
+  margin-top: 3.6vmax;
 }
 .SignInContainer form > input {
   width: 50%;
-  height: 16%;
+  height: 12%;
   background-color: transparent;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   border: 0;
@@ -897,15 +898,15 @@ nav {
 /* --------- edit profile ---------- */
 
 .Edit-Profile-Box {
-  width: 60%;
-  height: 70vh;
+  width: 45%;
+  height: 75vh;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   margin: auto;
   margin-top: 8vmax;
   display: flex;
   flex-direction: column;
-  padding: 2vmax;
+  padding:1vmax 3vmax;
   gap: 2vmax;
 }
 .Edit-Profile-Box > div > img {
@@ -915,7 +916,7 @@ nav {
 .Edit-Profile-Box > div {
   padding: 1vmax;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 }
 .Edit-Profile-Box > div > p {
@@ -923,16 +924,15 @@ nav {
   margin-left: 2vmax;
 }
 .Edit-Profile-Box > form:nth-child(3) {
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 2vmax;
 }
 .Edit-Profile-Box > form:nth-child(3) > input {
-  width: 40%;
-  background-color: rgb(227, 227, 227);
+  width: 35%;
+  background-color: rgb(255, 255, 255);
 }
 .Edit-Profile-Box > form:nth-child(3) > button {
   width: 5vmax;
@@ -940,30 +940,44 @@ nav {
   border: 0;
   border-radius: 10px;
   margin-left: -6vmax;
+  background-color: #c6f8f7;
+
 }
-.Edit-Profile-Box > form:nth-child(4) {
+.Edit-Profile-Box > form:nth-child(4)>div {
   /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
-  gap: 2vmax;
+  justify-content: space-between;
+  /* padding-left: 5.5vmax; */
+  width: 100%;
+  height: 20%;
+  margin-top:1vmax;
 }
-.Edit-Profile-Box > form:nth-child(4) > input {
+.Edit-Profile-Box > form:nth-child(4) >div>textarea {
   width: 40%;
-  background-color: rgb(227, 227, 227);
+  margin-left: 9vmax;
+  resize: none;
+  /* background-color: rgb(227, 227, 227); */
 }
-.Edit-Profile-Box > form:nth-child(4) > button {
+.Edit-Profile-Box > form:nth-child(4) >div> button {
   width: 5vmax;
   height: 2vmax;
   border: 0;
   border-radius: 10px;
-  margin-left: -6vmax;
+  background-color: #c6f8f7;
+  margin-top: 2vmax;
+}
+.Edit-Profile-Box > form:nth-child(4) >div>span{
+  width: 70%;
 }
 .Edit-Profile-Box > form:nth-child(4) > textarea {
   resize: none;
   width: 40%;
   height: 3.5vmax;
+}
+.Edit-Profile-Box > form>h5{
+  font-weight: 400;
 }
 .edit-Head {
   font-weight: 400;

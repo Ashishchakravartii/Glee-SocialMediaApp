@@ -57,3 +57,11 @@ function toggleLike(likeTag) {
 }
 
 
+axios
+  .post(`/likePost/:postId`)
+  .then((response) => {
+    console.log("Post liked successfully", response.data);
+  })
+  .catch((error) => {
+    console.error("Error liking post", error);
+  });

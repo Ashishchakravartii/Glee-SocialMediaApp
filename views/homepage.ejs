@@ -54,7 +54,8 @@
       </form>
     </div>
     <div class="feedBox-content-left">
-      <% if(allPost.length>0){ %> <% allPost.forEach((post) => { %>
+      <% if(allPost.length>0){ %>
+         <% allPost.forEach((post) => { %>
       <div class="postBox">
         <div class="post-top">
           <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
@@ -74,20 +75,24 @@
         <div class="post-imgBox">
           <img src="/images/posts/<%= post.media %>" alt="" />
         </div>
-       <!-- Inside a loop for each post -->
-  <span>
-    <a
-      class="likeTag text-decoration-none text-dark fs-2 mb-1"
-      href="/likePost/<%=post.id  %>"
-      onclick="toggleLike(this)">
-      <i class="ri-heart-3-line" id="likeIcon"></i>
-    </a>
-    <p><%= post.likes.length %></p>
-    <a class="text-decoration-none text-dark fs-3 mb-1" href="/postView/<%= post._id %>"><i class="ri-chat-3-line"></i></a>
-    <p><%= post.comments.length %></p>
-  </span>
-<!-- End of loop -->
-
+        <!-- Inside a loop for each post -->
+        <span>
+          <a
+            class="likeTag text-decoration-none text-dark fs-2 mb-1"
+            href="/likePost/<%=post.id  %>"
+            onclick="toggleLike(this)"
+          >
+            <i class="ri-heart-3-line" id="likeIcon"></i>
+          </a>
+          <p><%= post.likes.length %></p>
+          <a
+            class="text-decoration-none text-dark fs-3 mb-1"
+            href="/postView/<%= post._id %>"
+            ><i class="ri-chat-3-line"></i
+          ></a>
+          <p><%= post.comments.length %></p>
+        </span>
+        <!-- End of loop -->
 
         <p>
           <span><strong><%= post.user.username %></strong></span> &nbsp; <%=
@@ -98,7 +103,8 @@
             class="form-control"
             rows="1"
             placeholder="Add a comment..."
-            name="comment"></textarea
+            name="comment"
+          ></textarea
           ><button>Post</button>
         </form>
       </div>
@@ -126,7 +132,7 @@
         <div class="userInfoDiv-right">
           <div class="userInfoDiv-right-top d-flex">
             <span>
-              <h5><%=user.username%></h5>
+              <h5><%=user.name%></h5>
               <h6><%=user.username%></h6>
             </span>
             <span class="postNumber ms-4">
