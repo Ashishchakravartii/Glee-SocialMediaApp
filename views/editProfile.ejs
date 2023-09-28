@@ -50,7 +50,7 @@
     <h3 class="edit-Head">Edit Profile</h3>
     <div class="">
       <img src="/images/userImages/<%= user.avatar%>" alt="" />
-      <span class=" ms-4">
+      <span class="ms-4">
         <p><%= user.name%></p>
         <p><%= user.username%></p></span
       >
@@ -67,7 +67,12 @@
       <div class="d-flex">
         <span>
           <p>Update Bio</p>
-          <textarea class="form-control" name="bio" placeholder="Edit Bio">
+          <textarea
+            rows="2"
+            class="form-control textArea"
+            name="bio"
+            placeholder="Edit Bio"
+          >
 <%=user.bio%></textarea
           >
         </span>
@@ -79,7 +84,9 @@
         <span class="mt-3">
           <p class="ms-1">Username</p>
           <textarea
-            class="form-control"
+
+            rows="1"
+            class="form-control textArea"
             name="username"
             placeholder="Edit username"
           >
@@ -91,7 +98,6 @@
       </div>
     </form>
   </div>
-
 </div>
 
 <%- include("./partials/footer") %>

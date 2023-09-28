@@ -157,7 +157,18 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
   try {
     const { posts } = await req.user.populate("posts");
     console.log(posts);
-    res.render("profile", { user: req.user, posts });
+    var totalCommentCount=0;
+    var totalLikesCount=0;
+    posts.forEach((post) => {
+        totalCommentCount += post.comments.length;
+        totalLikesCount += post.likes.length;
+     } )  
+    res.render("profile", {
+      user: req.user,
+      posts,
+      totalCommentCount,
+      totalLikesCount,
+    });
   } catch (error) {
     console.log(error);
   }
@@ -167,12 +178,25 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
 
 router.get("/feedProfile/:id",async(req,res,next)=>{
 try {
-   const { posts } = await UserModel.findById(req.params.id).populate("posts");
+   const { posts } = await UserModel.findById(req.params.id).populate("posts"); 
+   var totalCommentCount=0;
+   var totalLikesCount = 0;
+    posts.forEach((post) => {
+      totalCommentCount += post.comments.length;
+      totalLikesCount += post.likes.length;
+    });
+   
    const otherUser = await UserModel.findById(req.params.id)
    if(otherUser.username === req.user.username){
     res.redirect("/profile")
    }
-   res.render("feedProfile", { otherUser, user: req.user, posts});
+   res.render("feedProfile", {
+     otherUser,
+     user: req.user,
+     posts,
+     totalCommentCount,
+     totalLikesCount,
+   });
 
   
 } catch (error) {
@@ -280,9 +304,9 @@ router.get("/postView/:id",isLoggedIn,async(req,res,next)=>{
 
        PostModel.findById(req.params.id)
        .populate("user", ["username", "avatar","_id"])
-       .then((posts) => {
+       .then((post) => {
     //      // Handle successful query results here
-         res.render("PostView", { user: req.user, post: posts, id:req.params.id });
+         res.render("PostView", { user: req.user, post: post, id:req.params.id });
        })
        .catch((err) => {
          // Handle errors here

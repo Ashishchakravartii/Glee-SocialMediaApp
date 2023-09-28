@@ -908,6 +908,10 @@ nav {
   flex-direction: column;
   padding:1vmax 3vmax;
   gap: 2vmax;
+  overflow: hidden;
+}
+.textArea{
+  resize: none;
 }
 .Edit-Profile-Box > div > img {
   width: 2.8vmax;
@@ -957,8 +961,11 @@ nav {
 .Edit-Profile-Box > form:nth-child(4) >div>textarea {
   width: 40%;
   margin-left: 9vmax;
-  resize: none;
+  /* resize: none; */
   /* background-color: rgb(227, 227, 227); */
+}
+.Edit-Profile-Box form>textarea{
+  
 }
 .Edit-Profile-Box > form:nth-child(4) >div> button {
   width: 5vmax;

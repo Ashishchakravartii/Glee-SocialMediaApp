@@ -38,6 +38,16 @@ const UserModel = mongoose.Schema({
   posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "post" }],
   bio: String,
 });
+
+// Define a pre-save hook to add "@" to the username
+UserModel.pre("save", function (next) {
+  // Check if the username doesn't already start with "@"
+  if (!this.username.startsWith("@")) {
+    this.username = "@" + this.username; // Add "@" to the username
+  }
+  next();
+});
+
 UserModel.plugin(plm);
 const user = mongoose.model("User", UserModel);
 module.exports = user;

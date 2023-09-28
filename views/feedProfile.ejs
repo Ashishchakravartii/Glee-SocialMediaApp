@@ -65,11 +65,11 @@
       </div>
       <div class="userProfileSameProperty-Div">
         <h6>
-          &bull;<span class="text-info-emphasis"><%= posts.length %></span>
+          &bull; <span class="text-info-emphasis"><%= posts.length %></span>
           Posts
         </h6>
-        <h6>&bull;<span class="text-info-emphasis">2.2k</span> Likes</h6>
-        <h6>&bull;<span class="text-info-emphasis">1.4k</span> Comments</h6>
+        <h6>&bull; <span class="text-info-emphasis"><%= totalLikesCount %></span> Likes </h6>
+        <h6>&bull; <span class="text-info-emphasis"><%= totalCommentCount %></span> Comments </h6>
       </div>
       <div class="bio-Profile-Div">
         <p><%=otherUser.bio%></p>
@@ -78,13 +78,28 @@
   </div>
   <div class="AllPosts">
     <h3><i class="text-info ri-grid-fill"></i> Posts</h3>
+    <% if(posts.length >0){ %>
     <% posts.forEach((post) => { %>
     <a href="/postView/<%=post._id  %>">
       <div>
         <img src="/images/posts/<%= post.media %>" alt="" /></div
     ></a>
 
-    <%})%>
+    <% })}else{ %>
+       <div class="ms-5 h-100 mt-5 w-100 p-5">
+        <p class="m-5 text-secondary ps-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img
+            class="ms-5"
+            width="32"
+            height="32"
+            src="/images/icons8-cat-footprint-64 (1).png"
+            alt="cat-footprint"
+          />
+          &nbsp; &nbsp; Oops!!! There's no post
+        </p>
+      </div>
+      <% } %>
+
   </div>
 
   <div></div>

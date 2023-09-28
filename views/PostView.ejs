@@ -77,7 +77,7 @@
         <ul class="list-unstyled">
           <li><img src="/images/userImages/<%= post.user.avatar %>" alt="" /> <strong> &nbsp;&nbsp;<%= post.user.username %></strong>&nbsp; <%= post.caption %></li>
           <% post.comments.forEach(comment=>{ %>
-            <li><%= comment.comment %></li>
+            <li>&bull; <%= comment.comment %></li>
          <% }) %>
         </ul>
       </div>
