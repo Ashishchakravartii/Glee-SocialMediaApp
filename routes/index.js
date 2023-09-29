@@ -34,8 +34,8 @@ router.get("/signup", (req, res, next) => {
 });
 router.post("/signup", async (req, res, next) => {
   try {
-    const { name,username, email, password } = req.body;
-    await UserModel.register({ name,username, email }, password);
+    const { name, username, email, password } = req.body;
+    await UserModel.register({ name, username, email }, password);
     res.redirect("/signin");
   } catch (error) {
     res.send(error.message);
@@ -62,22 +62,20 @@ router.get("/home", isLoggedIn, async (req, res) => {
   try {
     // const allPost = await PostModel.find();
     // res.render("homepage", { user: req.user, allPost });
-   PostModel.find({})
-     .populate("user", ["username","avatar"])
-     .then((posts) => {
-       // Handle successful query results here
-       res.render("homepage", { user: req.user, allPost:posts });
-       
-     })
-     .catch((err) => {
-       // Handle errors here
-       console.error("Error fetching posts:", err);
-     });
-
+    PostModel.find({})
+      .populate("user", ["username", "avatar"])
+      .then((posts) => {
+        // Handle successful query results here
+        res.render("homepage", { user: req.user, allPost: posts });
+      })
+      .catch((err) => {
+        // Handle errors here
+        console.error("Error fetching posts:", err);
+      });
   } catch (error) {
     res.send(error);
   }
-})
+});
 // router.get("/home", isLoggedIn, async (req, res) => {
 //   try {
 //     const allPost = await PostModel.find();
@@ -157,12 +155,12 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
   try {
     const { posts } = await req.user.populate("posts");
     console.log(posts);
-    var totalCommentCount=0;
-    var totalLikesCount=0;
+    var totalCommentCount = 0;
+    var totalLikesCount = 0;
     posts.forEach((post) => {
-        totalCommentCount += post.comments.length;
-        totalLikesCount += post.likes.length;
-     } )  
+      totalCommentCount += post.comments.length;
+      totalLikesCount += post.likes.length;
+    });
     res.render("profile", {
       user: req.user,
       posts,
@@ -176,61 +174,81 @@ router.get("/profile", isLoggedIn, async (req, res, next) => {
 
 // ------------------ feed user profile ----------
 
-router.get("/feedProfile/:id",async(req,res,next)=>{
-try {
-   const { posts } = await UserModel.findById(req.params.id).populate("posts"); 
-   var totalCommentCount=0;
-   var totalLikesCount = 0;
+router.get("/feedProfile/:id", async (req, res, next) => {
+  try {
+    const { posts } = await UserModel.findById(req.params.id).populate("posts");
+    var totalCommentCount = 0;
+    var totalLikesCount = 0;
     posts.forEach((post) => {
       totalCommentCount += post.comments.length;
       totalLikesCount += post.likes.length;
     });
-   
-   const otherUser = await UserModel.findById(req.params.id)
-   if(otherUser.username === req.user.username){
-    res.redirect("/profile")
-   }
-   res.render("feedProfile", {
-     otherUser,
-     user: req.user,
-     posts,
-     totalCommentCount,
-     totalLikesCount,
-   });
 
-  
-} catch (error) {
-  console.log(error);
-}
+    const otherUser = await UserModel.findById(req.params.id);
+    if (otherUser.username === req.user.username) {
+      res.redirect("/profile");
+    }
+    res.render("feedProfile", {
+      otherUser,
+      user: req.user,
+      posts,
+      totalCommentCount,
+      totalLikesCount,
+    });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 // ----------- Like post Route -----------------
 
-router.get("/likePost/:postId",isLoggedIn,async(req,res,next)=>{
-  try {
-    const postId= req.params.postId;
-
-    const post = await PostModel.findById(postId);
-
-     if (!post) {
-      return res.status(404).send("Post not found");
-    }
-    
-    const userIndex= post.likes.indexOf(req.user._id);
-    if(userIndex !== -1){
-      post.likes.splice(userIndex,1);
-    }else{
-      post.likes.push(req.user._id);
-    }
-
-     await post.save();
-     res.redirect("/home")
-
-  } catch (error) {
-    console.log(error);
-  }
-
+router.post("/like", isLoggedIn, async function (req, res) {
+  let loggedinuser = await UserModel.findOne({
+    username: req.session.passport.user,
+  });
+  let post = await PostModel.findOne({ _id: req.body.postId });
+  post.likes.push(loggedinuser._id);
+  // post.likeuser.push(loggedinuser);
+  post.save();
+  res.send({ success: true, likes: post.likes.length });
 });
+
+router.post("/unlike", isLoggedIn, async function (req, res) {
+  let loggedinuser = await UserModel.findOne({
+    username: req.session.passport.user,
+  });
+  let post = await PostModel.findOne({ _id: req.body.postId });
+  var unlike = post.likes.indexOf(loggedinuser._id);
+  post.likes.splice(unlike, 1);
+  post.save();
+  res.send({ success: true, likes: post.likes.length });
+});
+
+// router.get("/likePost/:postId",isLoggedIn,async(req,res,next)=>{
+//   try {
+//     const postId= req.params.postId;
+
+//     const post = await PostModel.findById(postId);
+
+//      if (!post) {
+//       return res.status(404).send("Post not found");
+//     }
+
+//     const userIndex= post.likes.indexOf(req.user._id);
+//     if(userIndex !== -1){
+//       post.likes.splice(userIndex,1);
+//     }else{
+//       post.likes.push(req.user._id);
+//     }
+
+//      await post.save();
+//      res.redirect("/home")
+
+//   } catch (error) {
+//     console.log(error);
+//   }
+
+// });
 
 // -------------- comment adding route ---------------
 
@@ -261,8 +279,6 @@ router.post("/addComment/:postId", isLoggedIn, async (req, res, next) => {
   }
 });
 
-
-
 // ----------- avatar ---------------------------
 
 router.post(
@@ -284,36 +300,39 @@ router.post(
 );
 // ------------- /saveBio -----------------------
 
-router.post("/saveBio",async(req,res,next)=>{
+router.post("/saveBio", async (req, res, next) => {
   try {
     // const user= await UserModel.findById(req.user._id);
-     req.user.bio = req.body.bio;
-     req.user.username = req.body.username;
-     await req.user.save();
-    res.redirect("/profile")
-
+    req.user.bio = req.body.bio;
+    req.user.username = req.body.username;
+    await req.user.save();
+    res.redirect("/profile");
   } catch (error) {
     console.log(error);
   }
 });
 // --------------- PostView -------------------
 
-router.get("/postView/:id",isLoggedIn,async(req,res,next)=>{
+router.get("/postView/:id", isLoggedIn, async (req, res, next) => {
   try {
     // const post= await PostModel.findById(req.params.id);
 
-       PostModel.findById(req.params.id)
-       .populate("user", ["username", "avatar","_id"])
-       .then((post) => {
-    //      // Handle successful query results here
-         res.render("PostView", { user: req.user, post: post, id:req.params.id });
-       })
-       .catch((err) => {
-         // Handle errors here
-         console.error("Error fetching posts:", err);
-       });
-    
-  // res.render("PostView",{post});
+    PostModel.findById(req.params.id)
+      .populate("user", ["username", "avatar", "_id"])
+      .then((post) => {
+        //      // Handle successful query results here
+        res.render("PostView", {
+          user: req.user,
+          post: post,
+          id: req.params.id,
+        });
+      })
+      .catch((err) => {
+        // Handle errors here
+        console.error("Error fetching posts:", err);
+      });
+
+    // res.render("PostView",{post});
   } catch (error) {
     console.log(error);
   }
@@ -321,27 +340,27 @@ router.get("/postView/:id",isLoggedIn,async(req,res,next)=>{
 
 // ------- delete post -------------------
 
-router.get("/deletePost/:id",async(req,res,next)=>{
+router.get("/deletePost/:id", async (req, res, next) => {
   try {
-     const postId = req.params.id;
+    const postId = req.params.id;
 
-     // Find the post to get the user's ID who created it
-     const post = await PostModel.findById(postId);
-     if (!post) {
-       return res.status(404).send("Post not found");
-     }
+    // Find the post to get the user's ID who created it
+    const post = await PostModel.findById(postId);
+    if (!post) {
+      return res.status(404).send("Post not found");
+    }
 
-     // Delete the post
-     await PostModel.findByIdAndDelete(postId);
+    // Delete the post
+    await PostModel.findByIdAndDelete(postId);
 
-     // Remove the reference to the post from the user's posts array
-     const user = await UserModel.findById(post.user);
-     if (user) {
-       user.posts.pull(postId);
-       await user.save();
-     }
+    // Remove the reference to the post from the user's posts array
+    const user = await UserModel.findById(post.user);
+    if (user) {
+      user.posts.pull(postId);
+      await user.save();
+    }
 
-    res.redirect("/profile")
+    res.redirect("/profile");
   } catch (error) {
     console.log(error);
   }
@@ -372,7 +391,7 @@ router.post(
 
 // ----------------- editProfile---------
 
-router.get("/editProfile",isLoggedIn, (req, res) => {
+router.get("/editProfile", isLoggedIn, (req, res) => {
   res.render("editProfile", { user: req.user });
 });
 
