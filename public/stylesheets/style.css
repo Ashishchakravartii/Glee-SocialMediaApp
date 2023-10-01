@@ -668,7 +668,7 @@ nav {
 }
 .post-top > span {
   margin-top: 0.5vmax;
-  width: 10vmax;
+  width: 100%;
   padding-left: 1vmax;
 }
 .post-top > span > h6 > span {
@@ -733,7 +733,7 @@ nav {
 
 .userInfoDiv {
   width: 25%;
-  height: 30%;
+  min-height: 26%;
   margin-top: 6.5vmax;
   margin-left: 2vmax;
   border-radius: 50px;
@@ -782,13 +782,15 @@ nav {
   font-size: 1.05vmax;
 }
 .userInfoDiv-right > div > span {
-  text-align: center;
+  text-align: start;
 }
+
 .postNumber {
   margin-right: 7vmax;
 }
 .userInfoDiv-right-top {
   height: 30%;
+  width: 100%;
 }
 .userInfoDiv-right-bottom {
   /* background-color: yellow; */
@@ -915,6 +917,7 @@ nav {
 }
 .Edit-Profile-Box > div > img {
   width: 2.8vmax;
+  height: 2.8vmax;
   border-radius: 50%;
 }
 .Edit-Profile-Box > div {
@@ -973,7 +976,6 @@ nav {
   border: 0;
   border-radius: 10px;
   background-color: #c6f8f7;
-  margin-top: 2vmax;
 }
 .Edit-Profile-Box > form:nth-child(4) >div>span{
   width: 70%;
@@ -988,6 +990,7 @@ nav {
 }
 .edit-Head {
   font-weight: 400;
+  padding-bottom: -0.5vmax;
 }
 
 /* ----------------------- */
@@ -1039,6 +1042,7 @@ nav {
   height: 100%;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
+ 
 }
 .PostViewWindow-content-top {
   border-top-right-radius: 50px;
@@ -1075,6 +1079,7 @@ nav {
 .PostViewWindow-content-top > div > img {
   width: 2.6vmax;
   height: 2.6vmax;
+  object-fit: cover;
   padding: 0.1vmax;
   border-radius: 50%;
   border: 1px solid gray;
@@ -1122,6 +1127,7 @@ nav {
    width: 2.6vmax;
    height: 2.6vmax;
    border-radius: 50%;
+   object-fit: cover;
    padding: 0.1vmax;
    border: 1px solid gray;
 }
@@ -1148,4 +1154,17 @@ nav {
   font-weight: 500;
   border-bottom: 1px solid rgb(189, 189, 189);
   border-radius: 15px;
+}
+
+.commentLogo{
+  margin-bottom: -5vmax;
+ 
+}
+.postCommentTextArea{
+
+    margin-top: .5vmax;
+   padding-left: 1.5vmax;
+    background-color: transparent;
+    resize: none;
+    outline: none;
 }

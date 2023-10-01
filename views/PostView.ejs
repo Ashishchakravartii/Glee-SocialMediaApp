@@ -71,13 +71,13 @@
           <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
           <p><%= post.user.username %></p>
         </div>
-        <i class="moreOptionPost ri-more-fill"></i>
+        <i class="fs-4 moreOptionPost ri-more-fill"></i>
       </div>
       <div class="PostViewWindow-content-center">
         <ul class="list-unstyled">
           <li><img src="/images/userImages/<%= post.user.avatar %>" alt="" /> <strong> &nbsp;&nbsp;<%= post.user.username %></strong>&nbsp; <%= post.caption %></li>
           <% post.comments.forEach(comment=>{ %>
-            <li>&bull; <%= comment.comment %></li>
+            <li class="">&bull; <%= comment.comment %></li>
          <% }) %>
         </ul>
       </div>
