@@ -1,4 +1,3 @@
-
 <%- include("./partials/header") %> <%- include("./partials/nav") %>
 
 <div class="profileContainer">
@@ -6,7 +5,7 @@
     <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
       <a href="/home"><img src="/images/homeIcon.svg" alt="" />&nbsp; Home</a>
       <a href="/profile"><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
-      <a href="/setting"><i class="ri-settings-line"></i> &nbsp; Setting</a>
+      <a href=""><i class="ri-settings-line"></i> &nbsp; Setting</a>
     </div>
     <div>
       <!-- <span class="createPost"
@@ -47,29 +46,23 @@
       <button class="">Upload</button>
     </form>
   </div>
-  <div class="ResetBoxMain">
-    <p class="fs-4 mt-2">Reset Password</p>
-    <div class="resetDiv">
-<form class="" action="/reset/<%= user._id %>" method="post">
-  <input
-    class=" form-control"
-    type="password"
-    placeholder="Old Password"
-    name="oldpassword"
-  />
+  <div class="Edit-Profile-Box">
+    <h3 class="edit-Head">Settings</h3>
+    <div class="mb-1">
+      <img src="/images/userImages/<%= user.avatar%>" alt="" />
+      <span class="ms-4 ">
+        <p class="mt-3"><Strong><%= user.name%> </Strong>
+          <br>
+          <%= user.username%></p>
 
-  <input
-    class=" form-control"
-    type="password"
-    placeholder="New Password"
-    name="newpassword"
-  />
-  <button class="">Reset</button>
-</form>
     </div>
-   
+     <div class="settingOptionDiv">
+      <ul>
+        <li><a class="text-decoration-none text-info" href="/reset">Reset Password</a></li>
+        <li><a class="text-decoration-none text-info" href="/editProfile">Update Profile </a></li>
+      </ul>
+     </div>
   </div>
 </div>
 
 <%- include("./partials/footer") %>
-

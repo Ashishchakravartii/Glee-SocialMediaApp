@@ -27,11 +27,6 @@ postOptionDivCancelBtn.addEventListener("click", () => {
   // PostViewWindow.style.filter = "blur(0px)";
 });
 
-// likeTag.addEventListener("click", () => {
-//   likeTag.innerHTML = `<img src="${/images/like_blue.svg}" alt="">`;
-// });
-
-
 
 // Select all likeTags
 const likeTags = document.querySelectorAll(".likeTag");
@@ -130,3 +125,7 @@ document.querySelector("#like-heart").addEventListener("click", () => {
     flag = 0;
   }
 }); 
+
+
+
+

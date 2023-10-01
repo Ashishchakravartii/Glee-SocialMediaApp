@@ -1,8 +1,8 @@
 <%- include("./partials/header") %>
 <nav class="nav">
   <span class=""
-    ><i class="ri-menu-4-fill"></i><img class="ms-2" width="32" height="32" src="/images/icons8-cat-footprint-64 (1).png" alt="cat-footprint"/>
-    <h3 class="me-3 logo">Glee</h3></span
+    ><img class="ms-2" width="32" height="32" src="/images/icons8-cat-footprint-64 (1).png" alt="cat-footprint"/>
+    <h3 class="ms-2 mt-2 logo">Glee</h3></span
   >
 
   <div class="serchBarDiv ms-4">
@@ -14,11 +14,14 @@
 <div class="joinBoxContent">
   <div class="sideOptions">
     <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
-      <a href=""><img src="/images/homeIcon.svg" alt="">&nbsp; Home</a>
-      <a href=""><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
-      <a href=""><i class="ri-settings-line"></i> &nbsp; Setting</a>
+      <a href="/signin"><img src="/images/homeIcon.svg" alt="">&nbsp; Home</a>
+      <a href="/signin"><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
+      <a href="/signin"><i class="ri-settings-line"></i> &nbsp; Setting</a>
     </div>
-    <div></div>
+     <div>
+      <a class="ms-4" href="/signin"><i class="ri-gallery-upload-fill"></i>&nbsp; Upload</a>
+     
+    </div>
     <div class="sideOptions-Div3">
       <div></div>
       <div class=""><i class="ms-4 mt-1 ri-google-play-line"></i><i class="ms-4 mt-1 ri-apple-fill"></i></div>
@@ -38,7 +41,7 @@
   </div>
   <div class="HastagBox">
     <h4><i class="ri-hashtag"></i>Trending Ideas</h4>
-    <div class="">
+   <a href="/signin"> <div class="">
       <h5>#webDev <br> <span>30.1M People used</span></h5>
       <img src="/images/vector-down.svg" alt="">
     </div>
@@ -61,7 +64,7 @@
     <div class="">
       <h5>#photography <br> <span>4.5M People used</span></h5>
       <img src="/images/vector-down.svg" alt="">
-    </div>
+    </div></a>
    
     
   </div>

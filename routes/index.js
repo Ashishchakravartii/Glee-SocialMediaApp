@@ -395,6 +395,12 @@ router.get("/editProfile", isLoggedIn, (req, res) => {
   res.render("editProfile", { user: req.user });
 });
 
+// =========== setting page ==================
+
+router.get("/setting",isLoggedIn,(req,res)=>{
+  res.render("setting",{user:req.user})
+});
+
 // -------------ISloggedIn Function-------------
 
 function isLoggedIn(req, res, next) {

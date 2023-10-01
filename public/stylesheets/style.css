@@ -308,7 +308,11 @@ nav span {
   flex-direction: column;
   justify-content: flex-start;
 }
-.HastagBox > div {
+.HastagBox > a{
+  text-decoration: none;
+  color: black;
+}
+.HastagBox > a>div {
   width: 90%;
   height: 5vmax;
   margin-top: 1.2vmax;
@@ -319,18 +323,18 @@ nav span {
   align-items: center;
   padding: 0 1.8vmax;
 }
-.HastagBox > div:hover {
+.HastagBox >a> div:hover {
   transition: all 2s ease;
   background-color: #4edcd8;
 }
-.HastagBox > div > img {
+.HastagBox >a> div > img {
   width: 1vmax;
 }
-.HastagBox > div > h5 {
+.HastagBox >a> div > h5 {
   font-size: 1vmax;
   font-weight: 500;
 }
-.HastagBox > div > h5 > span {
+.HastagBox >a> div > h5 > span {
   font-size: 0.85vmax;
   color: rgb(160, 156, 156);
   font-weight: 400;
@@ -593,7 +597,7 @@ nav span {
   width: 16.5vmax;
   height: 40.5vmax;
   position: fixed;
-  left: 0;
+  left: 0%;
   top: 12%;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   /* box-shadow: 30px 30px 24px rgba(0,0,0, 0.025); */
@@ -801,13 +805,14 @@ nav {
   width: 100%;
   font-weight: 400;
 }
-.userInfoDiv-right-bottom > button {
-  width: 8vmax;
+.userInfoDiv-right-bottom >span> button {
+  width: 5vmax;
   height: 2vmax;
   border-radius: 10px;
   border: 0;
+  
 }
-.userInfoDiv-right-bottom > button > a {
+.userInfoDiv-right-bottom >span> button > a {
   text-decoration: none;
   color: black;
 }
@@ -1167,4 +1172,68 @@ nav {
     background-color: transparent;
     resize: none;
     outline: none;
+}
+.settingOptionDiv>ul{
+  list-style: none;
+  font-size: 1vmax;
+  color: #2e8b88;
+  width: 100%;
+  
+}
+.settingOptionDiv>ul>li{
+  width: 70%;
+  height: 2.5vmax;
+  padding: 0.3vmax 1vmax;
+  border-radius: 5px;
+  border: 1px solid rgba(142, 142, 142, 0.1);
+  margin-top: 0.5vmax;
+}
+
+.resetDiv{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.resetDiv>form{
+  width: 100%;
+  height: 100%;
+  gap: 1.5vmax;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vmax;
+}
+.resetDiv> form > input {
+  width: 25vmax;
+  height: 2.5vmax;
+  background-color: transparent;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  border: 0;
+  border-radius: 50px;
+  padding-left: 2vmax;
+}
+.resetDiv> form > button {
+  width: 18vmax;
+  height: 2.5vmax;
+  background-color: #4edcd8;
+  border-radius: 50px;
+  border: 0;
+  margin-top: 0.5vmax;
+}
+.ResetBoxMain{
+ width: 38%;
+  height: 55vh;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 11vmax;
+  display: flex;
+  flex-direction: column;
+  padding:1vmax 3vmax;
+  gap: 2vmax;
+  overflow: hidden;
 }

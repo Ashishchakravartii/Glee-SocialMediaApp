@@ -5,7 +5,7 @@
     <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
       <a href="/home"><img src="/images/homeIcon.svg" alt="" />&nbsp; Home</a>
       <a href="/profile"><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
-      <a href=""><i class="ri-settings-line"></i> &nbsp; Setting</a>
+      <a href="/setting"><i class="ri-settings-line"></i> &nbsp; Setting</a>
     </div>
     <div>
       <span class="createPost"
@@ -69,7 +69,6 @@
                 ><%= post.createdAt.toLocaleDateString() %></span
               >
             </h6>
-             <i class="fs-4 me-3 moreOptionPost ri-more-fill"></i>
           </span>
         </div>
 
@@ -277,7 +276,8 @@
           </div>
           <div class="userInfoDiv-right-bottom pt-3">
             <p><%=user.bio%></p>
-            <button><a href="/profile">Profile</a></button>
+            <span><button><a href="/profile">Profile</a></button>
+            <button class="ms-3"><a href="/editProfile">Edit</a></button></span>
           </div>
         </div>
       </div>
