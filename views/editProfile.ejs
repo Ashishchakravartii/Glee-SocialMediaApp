@@ -5,12 +5,12 @@
     <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
       <a href="/home"><img src="/images/homeIcon.svg" alt="" />&nbsp; Home</a>
       <a href="/profile"><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
-      <a href=""><i class="ri-settings-line"></i> &nbsp; Setting</a>
+      <a href="/setting"><i class="ri-settings-line"></i> &nbsp; Setting</a>
     </div>
     <div>
-      <span class="createPost"
+      <!-- <span class="createPost"
         ><i class="ri-gallery-upload-fill"></i>&nbsp; Upload</span
-      >
+      > -->
     </div>
     <div class="sideOptions-Div3">
       <h6 class="ms-4 mt-2">
@@ -47,7 +47,7 @@
     </form>
   </div>
   <div class="Edit-Profile-Box">
-    <h3 class="edit-Head">Edit Profile</h3>
+    <span class="p-1 d-flex justify-content-between"><h3 class="edit-Head">Edit Profile</h3><a class="text-decoration-none text-dark" href="/setting"><i class="fs-4 ri-settings-5-fill"></i></a></span>
     <div class="mb-1">
       <img src="/images/userImages/<%= user.avatar%>" alt="" />
       <span class="ms-4 ">

@@ -57,7 +57,7 @@
       <% if(allPost.length>0){ %> <% allPost.forEach((post) => { %>
       <div class="postBox">
         <div class="post-top">
-          <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
+          <img src="/images/userImages/<%= post.user.avatar %>" alt="image" />
           <span class="d-flex justify-content-between">
             <h6>
               <a
@@ -88,7 +88,7 @@
 
         <!-- post option -->
         <div class="post-imgBox">
-          <img src="/images/posts/<%= post.media %>" alt="" />
+         <a href="/postView/<%=post._id%>"> <img src="/images/posts/<%= post.media %>" alt="" /></a>
         </div>
         <!-- Inside a loop for each post -->
         <div id="likecommentlogo" class="">

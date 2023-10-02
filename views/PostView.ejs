@@ -68,8 +68,9 @@
     <div class="PostViewWindow-content">
       <div class="PostViewWindow-content-top">
         <div>
-          <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
-          <p><%= post.user.username %></p>
+          <a href="/feedProfile/<%= post.user._id %>"> <img src="/images/userImages/<%= post.user.avatar %>" alt="" />
+          <p><%= post.user.username %></p></a>
+         
         </div>
         <i class="fs-4 moreOptionPost ri-more-fill"></i>
       </div>
