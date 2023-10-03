@@ -1306,3 +1306,18 @@ nav {
   padding: 0.5vmax;
   margin-top: 0.5vmax;
 }
+.Discover-content{
+  width: 83.5vw;
+  margin-left: 16.5vmax;
+  padding-top: 8vmax;
+  padding-left: 2vmax;
+
+}
+.Discover-content>div{
+  width: 25vw;
+  height: 45vh;
+  display: inline-block;
+  margin: 0.5vmax;
+  border-radius: 10px;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+}
