@@ -439,14 +439,26 @@ router.get("/deleteaccount", isLoggedIn, async (req, res, next) => {
 
 router.get("/discover",isLoggedIn,async(req,res,next)=>{
 try {
-  // const response = await axios.get(
-  //   "https://picsum.photos/v2/list?page=2&limit=10"
-  // );
+  const response = await axios.get(
+    "https://picsum.photos/v2/list?page=3&limit=9"
+  );
   // console.log(response.data);
 
-  res.render("discover",{user:req.user})
+  res.render("discover",{user:req.user,images:response.data})
 } catch (error) {
   res.send(error)
+}
+});
+
+// /discover page full image ---------------
+
+router.get("/discoverFull/:id",async(req,res,next)=>{
+try {
+  const response = await axios.get(`https://picsum.photos/id/${req.params.id}/info`);
+  // console.log(response.data);
+  res.render("DiscoverView", { user:req.user,img: response.data });
+} catch (error) {
+  console.log(error);
 }
 });
 

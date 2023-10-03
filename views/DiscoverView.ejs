@@ -1,0 +1,63 @@
+<%- include("./partials/header") %> <%- include("./partials/nav") %>
+
+<div class="profileContainer">
+  <div class="feedSideBar">
+    <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
+      <a href="/home"><img src="/images/homeIcon.svg" alt="" />&nbsp; Home</a>
+      <a href="/profile"><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
+      <a href=""><i class="ri-settings-line"></i> &nbsp; Setting</a>
+    </div>
+    <div>
+      <span class="createPost"
+        ><i class="ri-gallery-upload-fill"></i>&nbsp; Upload</span
+      >
+    </div>
+    <div class="sideOptions-Div3">
+      <h6 class="ms-4 mt-2">
+        <a class="text-decoration-none text-dark" href="/signout">Log Out</a>
+      </h6>
+      <div class="">
+        <i class="ms-4 mt-1 ri-google-play-line"></i
+        ><i class="ms-2 mt-1 ri-apple-fill"></i>
+      </div>
+      <div class="sideCardFooter ps-4">
+        <ul class="d-flex gap-3 list-unstyled">
+          <li>Terms</li>
+          <li>Privacy</li>
+          <li>FAQ</li>
+        </ul>
+        <p class="">
+          Made with <img src="/images/like_blue.svg" alt="" /> by <br />
+          <strong>ASHISH CHAKRAVARTI</strong>
+        </p>
+        <p class="">&copy 2023 Peeps Enterprises, Inc.</p>
+        <div class=""></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="uploadDiv">
+    <span
+      ><p>Upload Picture</p>
+      <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
+    ></span>
+    <form action="/savePost" method="post" enctype="multipart/form-data">
+      <i class="ri-upload-cloud-fill fs-1"></i>
+      <input class="form-control" type="file" name="media" />
+      <input
+        class="form-control mt-3"
+        type="text"
+        name="caption"
+        placeholder="Caption"
+      />
+      <button class="">Upload</button>
+    </form>
+  </div>
+  <div class="discoverPostViewWindow">
+    <img src="<%= img.download_url %>" alt="" />
+    <a class="text-decoration-none text-dark" href="/discover"><i class="fs-2 ms-3 ri-close-circle-line"></i></a>
+    
+  </div>
+
+  <%- include("./partials/footer") %>
+</div>

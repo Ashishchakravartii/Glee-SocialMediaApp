@@ -42,47 +42,53 @@
 
   <div class=" d-flex flex-column w-100 h-100 justify-content-center align-items-center">
 
-    <div class="Discover-content">
+     <div class="Discover-content">
       <!-- Existing code for images -->
-    
-      <!-- <div id="loadMoreContainer"> -->
-        <!-- </div> -->
+      <% images.map((img)=>{ %>
+      <div>
+        <a href="/discoverFull/<%= img.id %>"><img src="<%= img.download_url %>" alt="" /></a>
+        <a href="/discoverFull/<%= img.id %>"></a>
+        
       </div>
-      <button class="mb-5" id="loadMore">Load More</button>
+      <%}) %>
+      
+      <!-- <div id="loadMoreContainer">
+      </div> -->
+    </div>
+    <button class="" id="loadMore">Load More</button>
   </div>
 
+  <!-- ... other HTML code ... -->
+  <script>
+    // JavaScript code to handle infinite scroll
+    const loadMoreButton = document.getElementById("loadMore");
+    const loadMoreContainer = document.getElementById("loadMoreContainer");
+    let page = 4; // Initial page number
 
-<!-- ... other HTML code ... -->
-<script>
-  // JavaScript code to handle infinite scroll
-  const loadMoreButton = document.getElementById("loadMore");
-  const loadMoreContainer = document.getElementById("loadMoreContainer");
-  let page = 2; // Initial page number
+    loadMoreButton.addEventListener("click", async () => {
+      try {
+        const response = await axios.get(
+          `https://picsum.photos/v2/list?page=${page}&limit=9`
+        );
 
-  loadMoreButton.addEventListener("click", async () => {
-    try {
-      const response = await axios.get(
-        `https://picsum.photos/v2/list?page=${page}&limit=12`
-      );
+        if (response.data.length > 0) {
+          // Append new images to the existing container
+          response.data.forEach((img) => {
+            const imgElement = document.createElement("div");
+            imgElement.innerHTML = `<a href="/discoverFull/${img.id}"><img src="${img.download_url}" alt=""></a>`;
+            document.querySelector(".Discover-content").appendChild(imgElement);
+          });
 
-      if (response.data.length > 0) {
-        // Append new images to the existing container
-        response.data.forEach((img) => {
-          const imgElement = document.createElement("div");
-          imgElement.innerHTML = `<img src="${img.download_url}" alt="">`;
-          document.querySelector(".Discover-content").appendChild(imgElement);
-        });
-
-        page++; // Increment the page number
-      } else {
-        // No more images to load, hide the "Load More" button
-        loadMoreContainer.style.display = "none";
+          page++; // Increment the page number
+        } else {
+          // No more images to load, hide the "Load More" button
+          loadMoreContainer.style.display = "none";
+        }
+      } catch (error) {
+        console.error(error);
       }
-    } catch (error) {
-      console.error(error);
-    }
-  });
-</script>
+    });
+  </script>
 
 
 

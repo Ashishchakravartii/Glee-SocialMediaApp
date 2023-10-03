@@ -1322,16 +1322,35 @@ nav {
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   padding: 0.1vmax;
 }
-.Discover-content>div>img{
+.Discover-content>div>a>img{
   border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 #loadMore{
   width: 10vmax;
   height: 2vmax;
   border-radius: 10px;
   background-color: #4edcd8;
   border: 0;
+  margin: 2vmax 0 4vmax 12vmax;
+}
+.discoverPostViewWindow{
+   width: 70%;
+  height: 38vmax;
+  border-radius: 50px;
+  margin-left: 25vmax;
+  margin-top: 6vmax;
+  position: fixed;
+  display: flex;
+  background-color: white;
+}
+.discoverPostViewWindow>img{
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
