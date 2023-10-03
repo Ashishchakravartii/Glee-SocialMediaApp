@@ -1,3 +1,4 @@
+
 <%- include("./partials/header") %> <%- include("./partials/nav") %>
 
 <div class="profileContainer">
@@ -5,7 +6,7 @@
     <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
       <a href="/home"><img src="/images/homeIcon.svg" alt="" />&nbsp; Home</a>
       <a href="/profile"><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
-      <a href=""><i class="ri-settings-line"></i> &nbsp; Setting</a>
+      <a href="/setting"><i class="ri-settings-line"></i> &nbsp; Setting</a>
     </div>
     <div>
       <!-- <span class="createPost"
@@ -35,35 +36,16 @@
       </div>
     </div>
   </div>
-  <div class="uploadDiv">
-    <span
-      ><p>Upload Picture</p>
-      <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
-    ></span>
-    <form>
-      <i class="ri-upload-cloud-fill fs-1"></i>
-      <input class="form-control mt-3" type="file" />
-      <button class="">Upload</button>
-    </form>
-  </div>
-  <div class="Edit-Profile-Box">
-    <h3 class="edit-Head">Settings</h3>
-    <div class="mb-1">
-      <img class="loggedUserImg p-1 border" src="/images/userImages/<%= user.avatar%>" alt="" />
-      <span class="ms-4 ">
-        <p class="mt-3"><Strong><%= user.name%> </Strong>
-          <br>
-          <%= user.username%></p>
-
-    </div>
-     <div class="settingOptionDiv">
-      <ul>
-        <li><a class="text-decoration-none text-info" href="/reset">Reset Password</a></li>
-        <li><a class="text-decoration-none text-info" href="/editProfile">Update Profile </a></li>
-        <li><a class="text-decoration-none text-info" href="/confirmdeleteaccount">Delete my Account </a></li>
-      </ul>
-     </div>
+  
+  <div class="confirmationBox ">
+    <span class="d-flex flex-column align-items-center justify-content-between"><p class="fs-4 mt-2">Are you leaving us ? <i class="ri-emotion-sad-line"></i></p>   <p>This action will permanently delete your account and all associated posts. It cannot be undone.</p></span>
+ 
+    <button class="leaveBtn"><a href="/deleteaccount">Yes! I'm Leaving</a></button>
+    <button><a href="/home">No! Take me back</a></button>
+   
+   
   </div>
 </div>
 
 <%- include("./partials/footer") %>
+

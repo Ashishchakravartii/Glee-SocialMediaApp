@@ -589,6 +589,11 @@ nav span {
   margin-left: 1.6vmax;
 }
 
+/* logged user */
+.loggedUserImg{
+  object-fit: cover;
+}
+
 /* ------------------------ feed ----------------------- */
 
 .feedBox {
@@ -1243,4 +1248,61 @@ nav {
   padding:1vmax 3vmax;
   gap: 2vmax;
   overflow: hidden;
+}
+.confirmationBox>span{
+  text-align: center;
+}
+.confirmationBox{
+   width: 33%;
+  height: 45vh;
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 11vmax;
+  display: flex;
+  flex-direction: column;
+  padding:2vmax;
+  gap: 2vmax;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+
+}
+.confirmationBox>button>a{
+  text-decoration: none;
+  color: black;
+}
+.confirmationBox>button:nth-child(3){
+ width: 20vmax;
+  color: white;
+  height: 3vmax;
+  border: none;
+  background-color: #4edcd8;
+  border-radius: 50px;
+  animation: shadow-animation 2s infinite;
+}
+@keyframes shadow-animation {
+  0% {
+    box-shadow: 0 0 5px 0px rgba(78, 220, 216, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 5px 20px rgba(78, 220, 216, 0);
+  }
+}
+.leaveBtn{
+  width: 20vmax;
+  color: #000000;
+  height: 3vmax;
+  border: 1px solid black;
+  background-color: #ffffff;
+  border-radius: 50px;
+}
+.settingIconFeedBar{
+  margin-top: 1.5vmax;
+  margin-left: 1.5vmax;
+}
+.discoverIconFeedBar{
+  background-color: #e2fcfc;
+  padding: 0.5vmax;
+  margin-top: 0.5vmax;
 }

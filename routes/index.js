@@ -86,7 +86,7 @@ router.get("/home", isLoggedIn, async (req, res) => {
 // });
 // ----------- SignOut--------------------
 
-router.get("/signout", (req, res, next) => {
+router.get("/signout",isLoggedIn, (req, res, next) => {
   req.logOut(() => {
     res.redirect("/signin");
   });
@@ -94,7 +94,7 @@ router.get("/signout", (req, res, next) => {
 
 // ----------- Reset --------------------
 
-router.get("/reset", (req, res, next) => {
+router.get("/reset",isLoggedIn, (req, res, next) => {
   res.render("reset", { user: req.user });
   console.log(req.user);
 });
@@ -130,7 +130,7 @@ router.post("/getEmail", async (req, res, next) => {
 
 // ---------------- forget PAssword----------
 
-router.get("/change-password/:id", async (req, res, next) => {
+router.get("/change-password/:id",isLoggedIn, async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.params.id);
     res.render("change-Password", { user });
@@ -138,7 +138,7 @@ router.get("/change-password/:id", async (req, res, next) => {
     res.send(error);
   }
 });
-router.post("/change-password/:id", async (req, res, next) => {
+router.post("/change-password/:id",isLoggedIn, async (req, res, next) => {
   try {
     const user = await UserModel.findById(req.params.id);
     await user.setPassword(req.body.password);
@@ -400,6 +400,46 @@ router.get("/editProfile", isLoggedIn, (req, res) => {
 router.get("/setting",isLoggedIn,(req,res)=>{
   res.render("setting",{user:req.user})
 });
+// ---------- confirmation -----------------
+
+router.get("/confirmdeleteaccount", isLoggedIn, (req, res, next) => {
+  res.render("confirmdelete",{user:req.user}); // Render a confirmation page (you can create this)
+});
+
+// --------- delete account ----------------
+
+router.get("/deleteaccount", isLoggedIn, async (req, res, next) => {
+
+  const userIdToDelete = req.user._id;
+
+  try {
+    const user = await UserModel.findById(userIdToDelete);
+
+    if (!user) {
+      console.log("User not found");
+      return res.redirect("/join"); // Redirect here since the user is not found
+    }
+
+    // Find and delete all associated posts
+    await PostModel.deleteMany({ user: user._id });
+
+    // Delete the user
+    await user.deleteOne();
+
+    console.log("User and associated posts deleted successfully.");
+    return res.redirect("/"); // Redirect to a relevant page after successful deletion
+  } catch (err) {
+    console.error("Error:", err);
+    return next(err); // Pass the error to the error handler middleware
+  }
+});
+
+// ------ discover ----------------
+
+router.get("/discover",isLoggedIn,(req,res,next)=>{
+  res.render("discover",{user:req.user})
+});
+
 
 // -------------ISloggedIn Function-------------
 

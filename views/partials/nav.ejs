@@ -9,7 +9,7 @@
     <h6 class="">Search</h6>
   </div>
   <% if(locals.user){ %>
-    <button class="ProfileIcon"><a class="text-decoration-none text-dark" href="/profile"><img src="/images/userImages/<%=user.avatar%>" alt=""></a></button>
+    <button class="ProfileIcon"><a class="text-decoration-none text-dark" href="/profile"><img class="loggedUserImg" src="/images/userImages/<%=user.avatar%>" alt=""></a></button>
     <% }else{ %>
       <button class="SignInbtn-joinPage"><a class="text-decoration-none text-dark" href="/signin">SIGN IN</a></button>
       <% } %>
