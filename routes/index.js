@@ -12,6 +12,7 @@ const uploadPost = require("../utils/uploadPost");
 passport.use(new LocalStrategy(UserModel.authenticate()));
 
 const { sendmail } = require("../utils/mail");
+const { default: axios } = require("axios");
 
 /* GET home page. */
 // router.get('/',isLoggedIn, function(req, res, next) {
@@ -436,8 +437,17 @@ router.get("/deleteaccount", isLoggedIn, async (req, res, next) => {
 
 // ------ discover ----------------
 
-router.get("/discover",isLoggedIn,(req,res,next)=>{
+router.get("/discover",isLoggedIn,async(req,res,next)=>{
+try {
+  // const response = await axios.get(
+  //   "https://picsum.photos/v2/list?page=2&limit=10"
+  // );
+  // console.log(response.data);
+
   res.render("discover",{user:req.user})
+} catch (error) {
+  res.send(error)
+}
 });
 
 

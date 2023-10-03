@@ -38,32 +38,53 @@
       </div>
     </div>
   </div>
-  <div class="Discover-content">
-    <div class="uploadDiv">
-      <span
-        ><p>Upload Picture</p>
-        <i class="fs-3 mb-3 ri-close-circle-line closeUpload"></i
-      ></span>
-      <form action="/savePost" method="post" enctype="multipart/form-data">
-        <i class="ri-upload-cloud-fill fs-1"></i>
-        <input class="form-control" type="file" name="media" />
-        <input
-          class="form-control mt-3"
-          type="text"
-          name="caption"
-          placeholder="Caption"
-        />
-        <button class="">Upload</button>
-      </form>
-    </div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <!-- ... other HTML code ... -->
+
+  <div class=" d-flex flex-column w-100 h-100 justify-content-center align-items-center">
+
+    <div class="Discover-content">
+      <!-- Existing code for images -->
     
-</div>
+      <!-- <div id="loadMoreContainer"> -->
+        <!-- </div> -->
+      </div>
+      <button class="mb-5" id="loadMore">Load More</button>
+  </div>
+
+
+<!-- ... other HTML code ... -->
+<script>
+  // JavaScript code to handle infinite scroll
+  const loadMoreButton = document.getElementById("loadMore");
+  const loadMoreContainer = document.getElementById("loadMoreContainer");
+  let page = 2; // Initial page number
+
+  loadMoreButton.addEventListener("click", async () => {
+    try {
+      const response = await axios.get(
+        `https://picsum.photos/v2/list?page=${page}&limit=12`
+      );
+
+      if (response.data.length > 0) {
+        // Append new images to the existing container
+        response.data.forEach((img) => {
+          const imgElement = document.createElement("div");
+          imgElement.innerHTML = `<img src="${img.download_url}" alt="">`;
+          document.querySelector(".Discover-content").appendChild(imgElement);
+        });
+
+        page++; // Increment the page number
+      } else {
+        // No more images to load, hide the "Load More" button
+        loadMoreContainer.style.display = "none";
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  });
+</script>
+
+
 
 
 <%- include("./partials/footer") %>

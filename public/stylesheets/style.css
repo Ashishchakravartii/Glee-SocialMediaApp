@@ -1310,14 +1310,28 @@ nav {
   width: 83.5vw;
   margin-left: 16.5vmax;
   padding-top: 8vmax;
-  padding-left: 2vmax;
+  padding-left: 3vmax;
 
 }
 .Discover-content>div{
   width: 25vw;
   height: 45vh;
   display: inline-block;
-  margin: 0.5vmax;
-  border-radius: 10px;
+  margin: 0.2vmax;
+  border-radius: 20px;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+  padding: 0.1vmax;
+}
+.Discover-content>div>img{
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#loadMore{
+  width: 10vmax;
+  height: 2vmax;
+  border-radius: 10px;
+  background-color: #4edcd8;
+  border: 0;
 }
