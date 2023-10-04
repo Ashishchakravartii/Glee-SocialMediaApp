@@ -753,6 +753,8 @@ nav {
   position: fixed;
   display: flex;
   overflow: hidden;
+  padding-bottom: 1vmax;
+  padding-right: 1vmax;
 }
 .userInfoDiv-left {
   width: 20%;
@@ -1070,7 +1072,10 @@ nav {
   margin-right: 2vmax;
   font-size: 1.4vmax;
 }
-.PostViewWindow-content-top > div>a {
+.PostViewWindow-content-top >div{
+  width: 80%;
+}
+.PostViewWindow-content-top >div>a {
   display: flex;
   align-items: center;
   width: 50%;
@@ -1080,8 +1085,10 @@ nav {
 }
 
 .PostViewWindow-content-center {
-  width: 100%;
+  width: 30vw;
   height: 80%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .PostViewWindow-content-bottom {
   border-bottom-right-radius: 50px;
@@ -1136,11 +1143,33 @@ nav {
 .PostViewWindow-content-bottom > form > textarea::-webkit-scrollbar{
   display: none;
 }
-.PostViewWindow-content-center>ul>li{
+.PostViewWindow-content-center>ul{
+  width: 100%;
+}
+.PostViewWindow-content-center>ul>span>a>li{
+    width: 100%;
+    padding: 1vmax;
+}
+.PostViewWindow-content-center>ul>span{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1.5vmax;
+  align-items: center;
+}
+.PostViewWindow-content-center>ul>span>a>li{
     width: 100%;
     padding: 1vmax;
 }
 .PostViewWindow-content-center>ul>li>img{
+   width: 2.6vmax;
+   height: 2.6vmax;
+   border-radius: 50%;
+   object-fit: cover;
+   padding: 0.1vmax;
+   border: 1px solid gray;
+}
+.PostViewWindow-content-center>ul>span>a>li>img{
    width: 2.6vmax;
    height: 2.6vmax;
    border-radius: 50%;
@@ -1303,8 +1332,8 @@ nav {
 }
 .discoverIconFeedBar{
   background-color: #e2fcfc;
-  padding: 0.5vmax;
-  margin-top: 0.5vmax;
+  padding: 0.3vmax;
+  /* margin-top: 0.5vmax; */
 }
 .Discover-content{
   width: 83.5vw;
@@ -1353,4 +1382,16 @@ nav {
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
+}
+.commentLi{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(243, 242, 242);
+}
+.postCaption{
+  /* background-color: red; */
+  height: 8%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }

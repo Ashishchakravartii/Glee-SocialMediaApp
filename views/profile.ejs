@@ -1,16 +1,19 @@
 <%- include("./partials/header") %> <%- include("./partials/nav") %>
 
 <div class="profileContainer">
-  <div class="feedSideBar">
+   <div class="feedSideBar">
     <div class="d-flex flex-column justify-content-around ps-4 pt-4 pb-4">
       <a href="/home"><img src="/images/homeIcon.svg" alt="" />&nbsp; Home</a>
       <a href="/profile"><i class="ri-bear-smile-line"></i> &nbsp; Profile</a>
-      <a href="/setting"><i class="ri-settings-line"></i> &nbsp; Setting</a>
+       <a  class="discoverIconFeedBar" href="/discover"> <i class="ri-planet-line"></i> &nbsp; Discover</a>
+      
     </div>
-    <div>
+    <div class="d-flex flex-column">
       <span class="createPost"
         ><i class="ri-gallery-upload-fill"></i>&nbsp; Upload</span
       >
+      <a class="settingIconFeedBar" href="/setting"><i class="ri-settings-line"></i> &nbsp; Setting</a>
+     
     </div>
     <div class="sideOptions-Div3">
       <h6 class="ms-4 mt-2">

@@ -63,16 +63,25 @@ router.get("/home", isLoggedIn, async (req, res) => {
   try {
     // const allPost = await PostModel.find();
     // res.render("homepage", { user: req.user, allPost });
-    PostModel.find({})
-      .populate("user", ["username", "avatar"])
-      .then((posts) => {
-        // Handle successful query results here
-        res.render("homepage", { user: req.user, allPost: posts });
-      })
-      .catch((err) => {
-        // Handle errors here
-        console.error("Error fetching posts:", err);
-      });
+   PostModel.find({})
+  .populate("user", ["username", "avatar"])
+  .then((posts) => {
+    // Shuffle the posts array
+    posts = shuffleArray(posts);
+
+    // Handle successful query results here
+    res.render("homepage", { user: req.user, allPost: posts });
+  });
+
+// Function to shuffle an array using Fisher-Yates algorithm
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
   } catch (error) {
     res.send(error);
   }
@@ -268,6 +277,8 @@ router.post("/addComment/:postId", isLoggedIn, async (req, res, next) => {
     const newComment = {
       user: req.user._id,
       comment,
+      avatar:req.user.avatar,
+      username: req.user.username,
     };
 
     // Add the new comment to the comments array and save the post
@@ -279,6 +290,41 @@ router.post("/addComment/:postId", isLoggedIn, async (req, res, next) => {
     console.log(error);
   }
 });
+
+// ------------------ delete comment -----------------
+
+router.get("/deleteComment/:commentId", async (req, res, next) => {
+  try {
+    const commentId = req.params.commentId;
+
+    // Find the post containing the comment
+    const post = await PostModel.findOne({ "comments._id": commentId });
+
+    // Find the index of the comment in the comments array
+    const commentIndex = post.comments.findIndex((comment) => comment._id.toString() === commentId
+    );
+
+    // Check if the current user is the author of the comment or has appropriate permissions
+    // You may want to add your own logic here to determine if the user is authorized to delete the comment.
+
+    // For example, you can compare the user's ID with the comment's user ID
+    // if (
+    //   req.user._id.toString() !== post.comments[commentIndex].user.toString()
+    // ) {
+    //   return res.status(403).json({ message: "Unauthorized" });
+    // }
+
+    // Remove the comment from the comments array
+    post.comments.splice(commentIndex, 1);
+
+    // Save the updated post
+    await post.save();
+     res.redirect("/postView/"+ post._id);
+  } catch (error) {
+    return res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 
 // ----------- avatar ---------------------------
 

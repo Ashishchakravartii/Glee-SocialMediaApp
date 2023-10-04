@@ -9,6 +9,8 @@ const postmodel = new mongoose.Schema(
       {
         user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
         comment: String,
+        avatar:String,
+        username:String
       },
     ],
   },
