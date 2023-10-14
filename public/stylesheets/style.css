@@ -8,9 +8,7 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-
 }
-
 
 .ExplorePage {
   width: 100vw;
@@ -310,11 +308,11 @@ nav span {
   flex-direction: column;
   justify-content: flex-start;
 }
-.HastagBox > a{
+.HastagBox > a {
   text-decoration: none;
   color: black;
 }
-.HastagBox > a>div {
+.HastagBox > a > div {
   width: 90%;
   height: 5vmax;
   margin-top: 1.2vmax;
@@ -325,18 +323,18 @@ nav span {
   align-items: center;
   padding: 0 1.8vmax;
 }
-.HastagBox >a> div:hover {
+.HastagBox > a > div:hover {
   transition: all 2s ease;
   background-color: #4edcd8;
 }
-.HastagBox >a> div > img {
+.HastagBox > a > div > img {
   width: 1vmax;
 }
-.HastagBox >a> div > h5 {
+.HastagBox > a > div > h5 {
   font-size: 1vmax;
   font-weight: 500;
 }
-.HastagBox >a> div > h5 > span {
+.HastagBox > a > div > h5 > span {
   font-size: 0.85vmax;
   color: rgb(160, 156, 156);
   font-weight: 400;
@@ -590,14 +588,13 @@ nav span {
 }
 
 /* logged user */
-.loggedUserImg{
+.loggedUserImg {
   object-fit: cover;
 }
 
 /* ------------------------ feed ----------------------- */
 
 .feedBox {
-  
   width: 100vw;
   display: flex;
 }
@@ -696,7 +693,7 @@ nav {
   width: 100%;
   height: 65%;
 }
-.post-imgBox> a > img {
+.post-imgBox > a > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -815,14 +812,13 @@ nav {
   width: 100%;
   font-weight: 400;
 }
-.userInfoDiv-right-bottom >span> button {
+.userInfoDiv-right-bottom > span > button {
   width: 5vmax;
   height: 2vmax;
   border-radius: 10px;
   border: 0;
-  
 }
-.userInfoDiv-right-bottom >span> button > a {
+.userInfoDiv-right-bottom > span > button > a {
   text-decoration: none;
   color: black;
 }
@@ -872,6 +868,7 @@ nav {
   padding: 0 3vmax;
   margin-top: 0.5%;
 }
+
 .userProfile-bottom > div > button {
   width: 7.5vmax;
   height: 2.3vmax;
@@ -923,11 +920,11 @@ nav {
   margin-top: 8vmax;
   display: flex;
   flex-direction: column;
-  padding:1vmax 3vmax;
+  padding: 1vmax 3vmax;
   gap: 2vmax;
   overflow: hidden;
 }
-.textArea{
+.textArea {
   resize: none;
 }
 .Edit-Profile-Box > div > img {
@@ -963,9 +960,8 @@ nav {
   border-radius: 10px;
   margin-left: -6vmax;
   background-color: #c6f8f7;
-
 }
-.Edit-Profile-Box > form:nth-child(4)>div {
+.Edit-Profile-Box > form:nth-child(4) > div {
   /* background-color: red; */
   display: flex;
   align-items: center;
@@ -974,25 +970,23 @@ nav {
   /* padding-left: 5.5vmax; */
   width: 100%;
   height: 20%;
-  margin-top:1vmax;
+  margin-top: 1vmax;
 }
-.Edit-Profile-Box > form:nth-child(4) >div>textarea {
+.Edit-Profile-Box > form:nth-child(4) > div > textarea {
   width: 40%;
   margin-left: 9vmax;
   /* resize: none; */
   /* background-color: rgb(227, 227, 227); */
 }
-.Edit-Profile-Box form>textarea{
-  
-}
-.Edit-Profile-Box > form:nth-child(4) >div> button {
+
+.Edit-Profile-Box > form:nth-child(4) > div > button {
   width: 5vmax;
   height: 2vmax;
   border: 0;
   border-radius: 10px;
   background-color: #c6f8f7;
 }
-.Edit-Profile-Box > form:nth-child(4) >div>span{
+.Edit-Profile-Box > form:nth-child(4) > div > span {
   width: 70%;
 }
 .Edit-Profile-Box > form:nth-child(4) > textarea {
@@ -1000,7 +994,7 @@ nav {
   width: 40%;
   height: 3.5vmax;
 }
-.Edit-Profile-Box > form>h5{
+.Edit-Profile-Box > form > h5 {
   font-weight: 400;
 }
 .edit-Head {
@@ -1057,7 +1051,6 @@ nav {
   height: 100%;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
- 
 }
 .PostViewWindow-content-top {
   border-top-right-radius: 50px;
@@ -1072,10 +1065,10 @@ nav {
   margin-right: 2vmax;
   font-size: 1.4vmax;
 }
-.PostViewWindow-content-top >div{
+.PostViewWindow-content-top > div {
   width: 80%;
 }
-.PostViewWindow-content-top >div>a {
+.PostViewWindow-content-top > div > a {
   display: flex;
   align-items: center;
   width: 50%;
@@ -1096,11 +1089,11 @@ nav {
   height: 10%;
   border-top: 0.1px solid rgb(219, 219, 219);
 }
-.PostViewWindow-content-top > div>a{
+.PostViewWindow-content-top > div > a {
   text-decoration: none;
   color: black;
 }
-.PostViewWindow-content-top > div>a > img {
+.PostViewWindow-content-top > div > a > img {
   width: 2.6vmax;
   height: 2.6vmax;
   object-fit: cover;
@@ -1108,7 +1101,7 @@ nav {
   border-radius: 50%;
   border: 1px solid gray;
 }
-.PostViewWindow-content-top > div>a > p {
+.PostViewWindow-content-top > div > a > p {
   margin-top: 0.7vmax;
   font-weight: 500;
 }
@@ -1129,8 +1122,8 @@ nav {
   border-radius: 15px;
 }
 .PostViewWindow-content-bottom > form > textarea {
-   outline: none;
-       border:0;
+  outline: none;
+  border: 0;
   width: 80%;
   resize: none;
   border: 0;
@@ -1138,44 +1131,43 @@ nav {
   height: 100%;
   padding: 0.5vmax;
   padding-top: 1vmax;
-  
 }
-.PostViewWindow-content-bottom > form > textarea::-webkit-scrollbar{
+.PostViewWindow-content-bottom > form > textarea::-webkit-scrollbar {
   display: none;
 }
-.PostViewWindow-content-center>ul{
+.PostViewWindow-content-center > ul {
   width: 100%;
 }
-.PostViewWindow-content-center>ul>span>a>li{
-    width: 100%;
-    padding: 1vmax;
+.PostViewWindow-content-center > ul > span > a > li {
+  width: 100%;
+  padding: 1vmax;
 }
-.PostViewWindow-content-center>ul>span{
+.PostViewWindow-content-center > ul > span {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding-right: 1.5vmax;
   align-items: center;
 }
-.PostViewWindow-content-center>ul>span>a>li{
-    width: 100%;
-    padding: 1vmax;
+.PostViewWindow-content-center > ul > span > a > li {
+  width: 100%;
+  padding: 1vmax;
 }
-.PostViewWindow-content-center>ul>li>img{
-   width: 2.6vmax;
-   height: 2.6vmax;
-   border-radius: 50%;
-   object-fit: cover;
-   padding: 0.1vmax;
-   border: 1px solid gray;
+.PostViewWindow-content-center > ul > li > img {
+  width: 2.6vmax;
+  height: 2.6vmax;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 0.1vmax;
+  border: 1px solid gray;
 }
-.PostViewWindow-content-center>ul>span>a>li>img{
-   width: 2.6vmax;
-   height: 2.6vmax;
-   border-radius: 50%;
-   object-fit: cover;
-   padding: 0.1vmax;
-   border: 1px solid gray;
+.PostViewWindow-content-center > ul > span > a > li > img {
+  width: 2.6vmax;
+  height: 2.6vmax;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 0.1vmax;
+  border: 1px solid gray;
 }
 .postOptionDiv {
   width: 25vmax;
@@ -1202,26 +1194,23 @@ nav {
   border-radius: 15px;
 }
 
-.commentLogo{
+.commentLogo {
   margin-bottom: -5vmax;
- 
 }
-.postCommentTextArea{
-
-    margin-top: .5vmax;
-   padding-left: 1.5vmax;
-    background-color: transparent;
-    resize: none;
-    outline: none;
+.postCommentTextArea {
+  margin-top: 0.5vmax;
+  padding-left: 1.5vmax;
+  background-color: transparent;
+  resize: none;
+  outline: none;
 }
-.settingOptionDiv>ul{
+.settingOptionDiv > ul {
   list-style: none;
   font-size: 1vmax;
   color: #2e8b88;
   width: 100%;
-  
 }
-.settingOptionDiv>ul>li{
+.settingOptionDiv > ul > li {
   width: 70%;
   height: 2.5vmax;
   padding: 0.3vmax 1vmax;
@@ -1230,7 +1219,7 @@ nav {
   margin-top: 0.5vmax;
 }
 
-.resetDiv{
+.resetDiv {
   width: 100%;
   height: 100%;
   display: flex;
@@ -1238,7 +1227,7 @@ nav {
   align-items: center;
   flex-direction: column;
 }
-.resetDiv>form{
+.resetDiv > form {
   width: 100%;
   height: 100%;
   gap: 1.5vmax;
@@ -1248,7 +1237,7 @@ nav {
   align-items: center;
   margin-bottom: 2vmax;
 }
-.resetDiv> form > input {
+.resetDiv > form > input {
   width: 25vmax;
   height: 2.5vmax;
   background-color: transparent;
@@ -1257,7 +1246,7 @@ nav {
   border-radius: 50px;
   padding-left: 2vmax;
 }
-.resetDiv> form > button {
+.resetDiv > form > button {
   width: 18vmax;
   height: 2.5vmax;
   background-color: #4edcd8;
@@ -1265,8 +1254,8 @@ nav {
   border: 0;
   margin-top: 0.5vmax;
 }
-.ResetBoxMain{
- width: 38%;
+.ResetBoxMain {
+  width: 38%;
   height: 55vh;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   border-radius: 50px;
@@ -1274,15 +1263,15 @@ nav {
   margin-top: 11vmax;
   display: flex;
   flex-direction: column;
-  padding:1vmax 3vmax;
+  padding: 1vmax 3vmax;
   gap: 2vmax;
   overflow: hidden;
 }
-.confirmationBox>span{
+.confirmationBox > span {
   text-align: center;
 }
-.confirmationBox{
-   width: 33%;
+.confirmationBox {
+  width: 33%;
   height: 45vh;
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   border-radius: 50px;
@@ -1290,19 +1279,18 @@ nav {
   margin-top: 11vmax;
   display: flex;
   flex-direction: column;
-  padding:2vmax;
+  padding: 2vmax;
   gap: 2vmax;
   overflow: hidden;
   justify-content: center;
   align-items: center;
-
 }
-.confirmationBox>button>a{
+.confirmationBox > button > a {
   text-decoration: none;
   color: black;
 }
-.confirmationBox>button:nth-child(3){
- width: 20vmax;
+.confirmationBox > button:nth-child(3) {
+  width: 20vmax;
   color: white;
   height: 3vmax;
   border: none;
@@ -1318,7 +1306,7 @@ nav {
     box-shadow: 0 0 5px 20px rgba(78, 220, 216, 0);
   }
 }
-.leaveBtn{
+.leaveBtn {
   width: 20vmax;
   color: #000000;
   height: 3vmax;
@@ -1326,23 +1314,22 @@ nav {
   background-color: #ffffff;
   border-radius: 50px;
 }
-.settingIconFeedBar{
+.settingIconFeedBar {
   margin-top: 1.5vmax;
   margin-left: 1.5vmax;
 }
-.discoverIconFeedBar{
+.discoverIconFeedBar {
   background-color: #e2fcfc;
   padding: 0.3vmax;
   /* margin-top: 0.5vmax; */
 }
-.Discover-content{
+.Discover-content {
   width: 83.5vw;
   margin-left: 16.5vmax;
   padding-top: 8vmax;
   padding-left: 3vmax;
-
 }
-.Discover-content>div{
+.Discover-content > div {
   width: 25vw;
   height: 45vh;
   display: inline-block;
@@ -1351,14 +1338,14 @@ nav {
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   padding: 0.1vmax;
 }
-.Discover-content>div>a>img{
+.Discover-content > div > a > img {
   border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-#loadMore{
+#loadMore {
   width: 10vmax;
   height: 2vmax;
   border-radius: 10px;
@@ -1366,8 +1353,8 @@ nav {
   border: 0;
   margin: 2vmax 0 4vmax 12vmax;
 }
-.discoverPostViewWindow{
-   width: 70%;
+.discoverPostViewWindow {
+  width: 70%;
   height: 38vmax;
   border-radius: 50px;
   margin-left: 25vmax;
@@ -1376,22 +1363,43 @@ nav {
   display: flex;
   background-color: white;
 }
-.discoverPostViewWindow>img{
+.discoverPostViewWindow > img {
   box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
   width: 90%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
-.commentLi{
+.commentLi {
   list-style: none;
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgb(243, 242, 242);
 }
-.postCaption{
+.postCaption {
   /* background-color: red; */
   height: 8%;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+/* ======================= Responsive Properties ================================ */
+
+/* @media (min-width: 600px) {
+  .SignInContainer {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .SignInbtn-joinPage {
+    background: black;
+  }
+} */
+@media only screen and (max-width: 600px) {
+  .SignInContainer {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .SignInbtn-joinPage {
+    background: black;
+  }
 }
